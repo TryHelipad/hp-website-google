@@ -42,8 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
     checkTimelineItems();
 });
 
-
-
 $(document).ready(function() {
     var animating = false;
     var cardsCounter = 0;
@@ -119,7 +117,6 @@ $(document).ready(function() {
             release();
         });
     });
-  
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -172,7 +169,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-
-
-
