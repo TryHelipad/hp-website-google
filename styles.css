@@ -452,7 +452,7 @@ body {
 
 @keyframes scroll-1 {
     0% {
-        transform: translate3d(calc(-250px * 15), 0, 0);
+        transform: translate3d(100%, 0, 0);
     }
     100% {
         transform: translate3d(0, 0, 0);
@@ -461,7 +461,7 @@ body {
 
 @keyframes scroll-2 {
     0% {
-        transform: translate3d(calc(-220px * 15), 0, 0);
+        transform: translate3d(100%, 0, 0);
     }
     100% {
         transform: translate3d(0, 0, 0);
@@ -992,7 +992,7 @@ body {
 
 @keyframes scroll-roles-1 {
     0% {
-        transform: translateX(calc(-250px * 20));
+        transform: translateX(100%);
     }
     100% {
         transform: translateX(0);
@@ -1001,7 +1001,7 @@ body {
 
 @keyframes scroll-roles-2 {
     0% {
-        transform: translateX(calc(-230px * 20));
+        transform: translateX(100%);
     }
     100% {
         transform: translateX(0);
@@ -1010,7 +1010,7 @@ body {
 
 @keyframes scroll-roles-3 {
     0% {
-        transform: translateX(calc(-210px * 20));
+        transform: translateX(100%);
     }
     100% {
         transform: translateX(0);
