@@ -1298,7 +1298,7 @@ footer .container {
     }
     @keyframes scrollMobile-1 {
         0% {
-            transform: translateX(calc(-100vw * 15));
+            transform: translateX(calc(-30vw * 15));
         }
         100% {
             transform: translateX(0);
@@ -1307,13 +1307,13 @@ footer .container {
 
     @keyframes scrollMobile-2 {
         0% {
-            transform: translateX(calc(-90vw * 15));
+            transform: translateX(calc(-60vw * 15));
         }
         100% {
             transform: translateX(0);
         }
     }
-    }
+    
     #roles-row-1 {
         animation: scroll-roles-1 80s linear infinite;
     }
@@ -1456,5 +1456,5 @@ footer .container {
         flex-direction: column;
     }
 
-
+}
 
