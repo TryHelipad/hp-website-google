@@ -1200,19 +1200,19 @@ footer .container {
 
     @keyframes scroll-mobile-1 {
         0% {
-            transform: translate3d(calc(-30vw * 15), 0, 0);
+            transform: translateX(100%);
         }
         100% {
-            transform: translate3d(0, 0, 0);
+            transform: translateX(0);
         }
     }
 
     @keyframes scroll-mobile-2 {
         0% {
-            transform: translate3d(calc(-20vw * 15), 0, 0);
+            transform: translateX(100%);
         }
         100% {
-            transform: translate3d(0, 0, 0);
+            transform: translateX(0);
         }
     }
 
@@ -1279,7 +1279,7 @@ footer .container {
 
     @keyframes scroll-roles-1 {
         0% {
-            transform: translateX(calc(-100px * 20));
+            transform: translateX(100%);
         }
         100% {
             transform: translateX(0);
@@ -1288,7 +1288,7 @@ footer .container {
 
     @keyframes scroll-roles-2 {
         0% {
-            transform: translateX(calc(-90px * 20));
+            transform: translateX(100%);
         }
         100% {
             transform: translateX(0);
@@ -1297,7 +1297,7 @@ footer .container {
 
     @keyframes scroll-roles-3 {
         0% {
-            transform: translateX(calc(-80px * 20));
+            transform: translateX(100%);
         }
         100% {
             transform: translateX(0);
