@@ -1265,10 +1265,12 @@ footer .container {
     .testimonial-card {
         flex: 0 0 80%;
     }
-    .testimonial-row {
-        animation: scrollMobile 80s linear infinite;
+    #testimonial-row-1 {
+        animation: scrollMobile-1 80s linear infinite;
     }
-
+    #testimonial-row-2 {
+        animation: scrollMobile-2 80s linear infinite;
+    }
     .demo__content {
         overflow: hidden;
     position: relative;
@@ -1294,13 +1296,23 @@ footer .container {
         margin-bottom: 45px;
         margin-top: 0;
     }
-    @keyframes scrollMobile {
+    @keyframes scrollMobile-1 {
         0% {
-            transform: translateX(0);
-        }
-        100% {
             transform: translateX(calc(-100vw * 15));
         }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes scrollMobile-2 {
+        0% {
+            transform: translateX(calc(-90vw * 15));
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
     }
     #roles-row-1 {
         animation: scroll-roles-1 80s linear infinite;
@@ -1445,4 +1457,4 @@ footer .container {
     }
 
 
-}
+
