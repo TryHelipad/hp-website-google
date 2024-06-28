@@ -1191,11 +1191,11 @@ footer .container {
     }
     
     #testimonial-row-1 {
-        animation: scroll-mobile-1 80s linear infinite;
+        animation: scroll-mobile-1 30s linear infinite;
     }
 
     #testimonial-row-2 {
-        animation: scroll-mobile-2 80s linear infinite;
+        animation: scroll-mobile-2 30s linear infinite;
     }
 
     @keyframes scroll-mobile-1 {
