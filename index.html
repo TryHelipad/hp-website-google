@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Staffing Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="#"><img src="resources/Helipad logo white svg.svg" alt="Helipad Logo"></a>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="cta">Get Pricing Instantly</button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="content">
+                <div class="hero-text-container">
+                    <div class="hand-drawn"><img src="resources/Highlight_05.svg" alt="hand drawn"></div>
+                    <h2 class="banner-heading">Talent that should cost $150k, for <span class="highlight-text">$4 an hour.</span></h2>
+                    <p class="banner-paragraph">We find you remote talent with perfect English, even better skills for $4 an hour. 
+                        Try our pricing calculator to find out exactly how much you can save.</p>
+                    
+                    <button class="cta">Get Pricing Instantly</button>
+                    
+                </div>
+                <div class="hero-image">
+                    <img src="resources/header-image.png" alt="Helipad">
+                </div>
+            </div>
+        </section>
+        <section class="roles-section">
+            <div class="roles-content">
+                <div class="roles-text">
+                    <h2>These Superstars are already taken. But we'll find you more.</h2>
+                    <p>We have helped over 500 businesses hire the top 1% of talent in over 15 countries. <br></br><strong>What's our secret?</strong> We possess some of the best recruiters in the world
+                        with a combined experience of recruiting over 2000 talented individuals in 80+ industries.
+                    </p>
+                </div>
+                <div class="roles-cards demo">
+                    <div class="demo__content">
+                        <div class="demo__card-cont">
+                            <!-- Card 1 -->
+                            <div class="demo__card">
+                                <div class="demo__card__img" style="background-image: url('resources/Erik-Photo.png');"></div>
+                                <div class="demo__card__info">
+                                    <p class="demo__card__name">Erik C.</p>
+                                    <p class="demo__card__title">Construction Estimator</p>
+                                    <p class="demo__card__experience">5 Years Experience</p>
+                                    <p class="demo__card__salary">$6/hour</p>
+                                </div>
+                                <div class="demo__card__btm">
+                                    <p class="demo__card__we">Past Experience:</p>
+                                    <div class="demo__card__logos">
+                                        <img src="resources/Sanitär Schwarz.png" alt="Sanitär Schwarz">
+                                        <img src="resources/Max Bogl.png" alt="Max Bögl">
+                                    </div>
+                                </div>
+                                <div class="demo__card__choice m--reject"></div>
+                                <div class="demo__card__choice m--like"></div>
+                                <div class="demo__card__drag"></div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="demo__card">
+                                <div class="demo__card__img" style="background-image: url('resources/Luka-Photo.png');"></div>
+                                <div class="demo__card__info">
+                                    <p class="demo__card__name">Luka B.</p>
+                                    <p class="demo__card__title">Graphic Designer</p>
+                                    <p class="demo__card__experience">4 Years Experience</p>
+                                    <p class="demo__card__salary">$7/hour</p>
+                                </div>
+                                <div class="demo__card__btm">
+                                    <p class="demo__card__we">Past Experience:</p>
+                                    <div class="demo__card__logos">
+                                        <img src="resources/icons8-facebook-50.png" alt="Facebook">
+                                        <img src="resources/icons8-behance-50.png" alt="Behance">
+                                    </div>
+                                </div>
+                                <div class="demo__card__choice m--reject"></div>
+                                <div class="demo__card__choice m--like"></div>
+                                <div class="demo__card__drag"></div>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="demo__card">
+                                <div class="demo__card__img" style="background-image: url('resources/Michelle-Photo.png');"></div>
+                                <div class="demo__card__info">
+                                    <p class="demo__card__name">Michelle C.</p>
+                                    <p class="demo__card__title">Real Estate Admin</p>
+                                    <p class="demo__card__experience">4 Years Experience</p>
+                                    <p class="demo__card__salary">$5/hour</p>
+                                </div>
+                                <div class="demo__card__btm">
+                                    <p class="demo__card__we">Past Experience:</p>
+                                    <div class="demo__card__logos">
+                                        <img src="resources/Remax-logo.png" alt="RE/MAX">
+                                        <img src="resources/Vacasa-Logo.png" alt="Vacasa">
+                                    </div>
+                                </div>
+                                <div class="demo__card__choice m--reject"></div>
+                                <div class="demo__card__choice m--like"></div>
+                                <div class="demo__card__drag"></div>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="demo__card">
+                                <div class="demo__card__img" style="background-image: url('resources/Nadya-Photo.png');"></div>
+                                <div class="demo__card__info">
+                                    <p class="demo__card__name">Linda M.</p>
+                                    <p class="demo__card__title">Administrative Assistant</p>
+                                    <p class="demo__card__experience">6 Years Experience</p>
+                                    <p class="demo__card__salary">$5/hour</p>
+                                </div>
+                                <div class="demo__card__btm">
+                                    <p class="demo__card__we">Past Experience:</p>
+                                    <div class="demo__card__logos">
+                                        <img src="resources/Sundays-Logo.png" alt="Sundays">
+                                        <img src="resources/Titan-Logo.png" alt="Titan">
+                                    </div>
+                                </div>
+                                <div class="demo__card__choice m--reject"></div>
+                                <div class="demo__card__choice m--like"></div>
+                                <div class="demo__card__drag"></div>
+                            </div>
+                            <!-- Card 5 -->
+                            <div class="demo__card">
+                                <div class="demo__card__img" style="background-image: url('resources/Alec-Photo.png');"></div>
+                                <div class="demo__card__info">
+                                    <p class="demo__card__name">Alec T.</p>
+                                    <p class="demo__card__title">Data Analyst</p>
+                                    <p class="demo__card__experience">8 Years Experience</p>
+                                    <p class="demo__card__salary">$9/hour</p>
+                                </div>
+                                <div class="demo__card__btm">
+                                    <p class="demo__card__we">Past Experience:</p>
+                                    <div class="demo__card__logos">
+                                        <img src="resources/Alteryx-white.png" alt="Alteryx">
+                                        <img src="resources/Qlik Logo.png" alt="Qlik">
+                                    </div>
+                                </div>
+                                <div class="demo__card__choice m--reject"></div>
+                                <div class="demo__card__choice m--like"></div>
+                                <div class="demo__card__drag"></div>
+                            </div>
+                        </div>
+                        <p class="demo__tip">Swipe left or right</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="testimonials-section">
+            <div class="testimonial-description">
+            <h2>Our Glowing Reviews</h2>
+            <p>With over 500+ Businesses served, we let our clients speak for us.</p>
+        </div>
+            <div class="testimonial-carousel">
+                <div class="testimonial-row" id="testimonial-row-1">
+                    <div class="testimonial-card">
+                        <p>"Helipad's services have exceeded our expectations. Highly recommended!"</p>
+                        <p class="testimonial-name">Jane D.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Amazing talent and top-notch service. Our business has grown thanks to Helipad."</p>
+                        <p class="testimonial-name">John S.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Professional and reliable. The best staffing solution we've ever used."</p>
+                        <p class="testimonial-name">Lisa M.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Helipad made it easy to find the right talent for our project."</p>
+                        <p class="testimonial-name">Sam K.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Outstanding service and support. We couldn't be happier."</p>
+                        <p class="testimonial-name">Emily R.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Our team has been more productive since we started using Helipad."</p>
+                        <p class="testimonial-name">Daniel B.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Helipad helped us scale quickly and efficiently."</p>
+                        <p class="testimonial-name">Natalie F.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"We found the perfect fit for our team with Helipad."</p>
+                        <p class="testimonial-name">Chris P.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Helipad's talent pool is second to none."</p>
+                        <p class="testimonial-name">Alex T.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"The best staffing solution we've ever used."</p>
+                        <p class="testimonial-name">Kelly W.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Helipad has transformed our hiring process."</p>
+                        <p class="testimonial-name">Michael H.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"The talent we found through Helipad is exceptional."</p>
+                        <p class="testimonial-name">Olivia G.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Helipad provided us with exactly what we needed."</p>
+                        <p class="testimonial-name">Ethan L.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Exceptional service and outstanding talent."</p>
+                        <p class="testimonial-name">Sophia N.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Highly professional and reliable."</p>
+                        <p class="testimonial-name">Jack R.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-row" id="testimonial-row-2">
+                    <div class="testimonial-card">
+                        <p>"I can't imagine hiring without Helipad now."</p>
+                        <p class="testimonial-name">Rachel K.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"The best staffing service we've ever used."</p>
+                        <p class="testimonial-name">Jake B.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Helipad found us amazing talent quickly."</p>
+                        <p class="testimonial-name">Laura H.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Highly recommend Helipad for staffing needs."</p>
+                        <p class="testimonial-name">Matt C.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Efficient, professional, and great value."</p>
+                        <p class="testimonial-name">Natalie S.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Helipad has been a game-changer for us."</p>
+                        <p class="testimonial-name">Lucas R.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Best decision we made for our team."</p>
+                        <p class="testimonial-name">Karen T.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"The hiring process is so much easier now."</p>
+                        <p class="testimonial-name">David G.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Helipad provided excellent candidates."</p>
+                        <p class="testimonial-name">Emma W.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Fast, efficient, and professional service."</p>
+                        <p class="testimonial-name">Oliver P.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"We love working with Helipad."</p>
+                        <p class="testimonial-name">Sarah L.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Highly skilled candidates and great service."</p>
+                        <p class="testimonial-name">Henry M.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"The support from Helipad has been fantastic."</p>
+                        <p class="testimonial-name">Zoe K.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Helipad has been a key partner in our growth."</p>
+                        <p class="testimonial-name">Adam H.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Fantastic service and top-quality candidates."</p>
+                        <p class="testimonial-name">Megan J.</p>
+                        <div class="stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="timeline-section">
+            <div class="container">
+                <h2>Less Talking, More Recruiting</h2>
+                <p>We know that time is precious, so we won't waste yours. Get your instant quote if you like what you see, just pay the $100 initiation fee 
+                    and we'll get started straight away.<br><strong>We even guarantee your money back for 6 months if you aren't happy with our service.</strong>
+                </p>
+                <div class="button-cta">
+                    <button class="cta">Get Pricing Instantly</button>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item" data-timeline-step="1">
+                        <div class="timeline-icon">
+                            <img src="resources/coin (1).svg" alt="Consultation Icon">
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Day 0: Get Your Free Instant Quote</h3>
+                            <p>It's really that simple, let us know what you're looking for. Get the pricing Instantly.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-timeline-step="2">
+                        <div class="timeline-icon">
+                            <img src="resources/binoculars.svg" alt="Candidate Selection Icon">
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Day 1-3: Find your perfect match</h3>
+                            <p>We go searching for the perfect talent for your business. We look for individuals with experience in your industry and <strong>2 years of experience in your country.</strong> 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-timeline-step="3">
+                        <div class="timeline-icon">
+                            <img src="resources/suitcase.svg" alt="Interview Icon">
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Day 4: Interviews</h3>
+                            <p>We'll find you the top 3 candidates from our search. In 99% of cases, we get it right. If we don't get it right we'll narrow our search even further and get you the top candidates within the next few days.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-timeline-step="4">
+                        <div class="timeline-icon">
+                            <img src="resources/handshake.svg" alt="Onboarding Icon">
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Day 5: Onboarding</h3>
+                            <p>We have already prepared all the systems you need for your virtual staff based on your needs. We show you the systems, get your feedback and send them over to you.
+                                The best part is, it's completely free.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-timeline-step="5">
+                        <div class="timeline-icon">
+                            <img src="resources/laptop-computer (1).svg" alt="Start Working Icon">
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Day 6: Ready to Work</h3>
+                            <p>Your new team member starts working on your projects immediately.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="comparison-section">
+            <div class="container">
+                <h2>Meet Julie, Your Next Superstar</h2>
+                <p>Compare Julie, an experienced overseas worker, with a local hire and see why she's the better choice for your business.</p>
+                <div class="comparison-wrapper">
+                    <div class="comparison-column julie">
+                        <div class="comparison-header">
+                            <img src="resources/julie-photo.png" alt="Julie">
+                            <h3>Julie (Overseas Hire)</h3>
+                        </div>
+                        <div class="comparison-item">
+                            <img src="resources/experience-icon.svg" alt="Experience Icon">
+                            <strong>Experience:</strong>
+                            <p>8 Years</p>
+                        </div>
+                        <div class="comparison-item">
+                            <img src="resources/salary-icon.svg" alt="Salary Icon">
+                            <strong>Salary:</strong>
+                            <p>$6/hour</p>
+                        </div>
+                        <div class="comparison-item">
+                            <img src="resources/availability-icon.svg" alt="Availability Icon">
+                            <strong>Availability:</strong>
+                            <p>Will work when you want</p>
+                        </div>
+                        <div class="comparison-item">
+                            <img src="resources/reliability-icon.svg" alt="Reliability Icon">
+                            <strong>Reliability:</strong>
+                            <p>Backed by our guarantee to always be there when you need.</p>
+                        </div>
+                        <div class="comparison-item">
+                            <img src="resources/cultural-fit-icon.svg" alt="Cultural Fit Icon">
+                            <strong>Cultural Fit:</strong>
+                            <p>Excellent</p>
+                        </div>
+                        <div class="comparison-item">
+                            <img src="resources/skills-icon.svg" alt="Skills Icon">
+                            <strong>Skills:</strong>
+                            <p>Highly Skilled and Trained</p>
+                        </div>
+                        
+                    </div>
+                    <div class="comparison-column local-hire">
+                        <div class="comparison-header">
+                            <img src="resources/local-hire-photo.svg" alt="Local Hire">
+                            <h3>Local Hire</h3>
+                        </div>
+                        <div class="comparison-item">
+                            <img src="resources/experience-icon.svg" alt="Experience Icon">
+                            <strong>Experience:</strong>
+                            <p>1 Year (wants to learn on the job)</p>
+                        </div>
+                        <div class="comparison-item">
+                            <img src="resources/salary-icon.svg" alt="Salary Icon">
+                            <strong>Salary:</strong>
+                            <p>$25/hour</p>
+                        </div>
+                        <div class="comparison-item">
+                            <img src="resources/availability-icon.svg" alt="Availability Icon">
+                            <strong>Availability:</strong>
+                            <p>Needs lots of annual holidays</p>
+                        </div>
+                        <div class="comparison-item">
+                            <img src="resources/reliability-icon.svg" alt="Reliability Icon">
+                            <strong>Reliability:</strong>
+                            <p>Likely to Leave for Better Opportunity</p>
+                        </div>
+                        <div class="comparison-item">
+                            <img src="resources/cultural-fit-icon.svg" alt="Cultural Fit Icon">
+                            <strong>Cultural Fit:</strong>
+                            <p>Variable</p>
+                        </div>
+                        <div class="comparison-item">
+                            <img src="resources/skills-icon.svg" alt="Skills Icon">
+                            <strong>Skills:</strong>
+                            <p>Basic and Developing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="roles-section">
+            <div class="container">
+                <h2>Explore the Roles We Can Hire For</h2>
+                <p>Whether you are an ecommerce business, a small plumbing business or a fortune 500 company, we will find you the perfect fit for the job.</p>
+                <div class="roles-carousel">
+                    <div class="roles-row" id="roles-row-1"></div>
+                    <div class="roles-row" id="roles-row-2"></div>
+                    <div class="roles-row" id="roles-row-3"></div>
+                </div>
+            </div>
+        </section>
+        <section class="consultation-section">
+            <div class="container">
+                <div class="consultation-content">
+                    <div class="consultation-text">
+                        <h2>Still Unsure? Book a Consultation</h2>
+                        <p>If you're still on the fence, let's discuss your needs. Book a free consultation with us, and we'll help you find the perfect staffing solution tailored to your business.</p>
+                        <button class="cta">Book Your Free Consultation</button>
+                    </div>
+                    <div class="consultation-image">
+                        <img src="resources/consultation-photo.png" alt="Consultation">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="benefits-section">
+            <div class="container">
+                <h2>You Don't Pay Us a Cent, If You're Not Happy</h2>
+                <p>Discover how our virtual staffing solutions can transform your business with zero risk.</p>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <img src="resources/top-talent-icon.svg" alt="Top Talent Icon">
+                        <h3>Top Talent</h3>
+                        <p>Access the top 1% of global talent with industry-specific experience.</p>
+                    </div>
+                    <div class="risk-reversal-item">
+                        <img src="resources/money-back-icon.svg" alt="Money-Back Guarantee Icon">
+                        <h3>Money-Back Guarantee</h3>
+                        <p>100% satisfaction guaranteed or your money back within 6 months.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <img src="resources/cost-savings-icon.svg" alt="Cost Savings Icon">
+                        <h3>Cost Savings</h3>
+                        <p>Save up to 70% on staffing costs without compromising quality.</p>
+                    </div>
+                    <div class="risk-reversal-item">
+                        <img src="resources/no-contracts-icon.svg" alt="No Long-Term Contracts Icon">
+                        <h3>No Long-Term Contracts</h3>
+                        <p>Flexible, month-to-month agreements.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <img src="resources/ready-to-work-icon.svg" alt="Ready to Work Icon">
+                        <h3>Ready to Work</h3>
+                        <p>Your virtual staff is ready to start immediately.</p>
+                    </div>
+                    <div class="risk-reversal-item">
+                        <img src="resources/culture-fit-icon.svg" alt="Great Culture Fit Icon">
+                        <h3>Great Culture Fit</h3>
+                        <p>Our talent seamlessly integrates into your company culture.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <img src="resources/experienced-icon.svg" alt="Experienced Professionals Icon">
+                        <h3>Experienced Professionals</h3>
+                        <p>All our staff have a minimum of 2 years of experience in your country.</p>
+                    </div>
+                    <div class="risk-reversal-item">
+                        <img src="resources/customer-service.svg" alt="24/7 Support Icon">
+                        <h3>24/7 Support</h3>
+                        <p>We provide round-the-clock support to ensure your satisfaction.</p>
+                    </div>
+                </div>
+                <div class="cta-container">
+                    <a href="#" class="cta">Get Started Risk-Free</a>
+                </div>
+            </div>
+        </section>
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-columns">
+                    <div class="faq-column">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What is Helipad?</h3>
+                                <div class="faq-icon">+</div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Helipad is a virtual staffing agency that helps you hire top global talent for a fraction of the cost.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How do I get started?</h3>
+                                <div class="faq-icon">+</div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>You can get started by getting an instant quote on our website and paying the $100 initiation fee.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>What roles can I hire for?</h3>
+                                <div class="faq-icon">+</div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We offer a wide range of roles including developers, designers, virtual assistants, and more.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-column">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How much does it cost?</h3>
+                                <div class="faq-icon">+</div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our services start at $4 per hour for remote talent with significant cost savings over local hires.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Is there a guarantee?</h3>
+                                <div class="faq-icon">+</div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, we offer a 6-month money-back guarantee if you aren't happy with our service.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>How quickly can I hire someone?</h3>
+                                <div class="faq-icon">+</div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our process is very quick. You can have a new team member working on your projects within a week.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+        
+        
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Virtual Assistants</a></li>
+                        <li><a href="#">Developers</a></li>
+                        <li><a href="#">Designers</a></li>
+                        <li><a href="#">Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <ul class="social-media">
+                        <li><a href="#"><img src="resources/facebook-icon.svg" alt="Facebook"></a></li>
+                        <li><a href="#"><img src="resources/twitter-icon.svg" alt="Twitter"></a></li>
+                        <li><a href="#"><img src="resources/linkedin-icon.svg" alt="LinkedIn"></a></li>
+                        <li><a href="#"><img src="resources/instagram-icon.svg" alt="Instagram"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Virtual Staffing Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+</body>
+</html>
