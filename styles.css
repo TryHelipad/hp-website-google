@@ -1251,6 +1251,7 @@ footer .container {
 
     .roles-text {
         margin-bottom: 20px;
+        text-align: left;
     }
 
     .roles-text h2 {
