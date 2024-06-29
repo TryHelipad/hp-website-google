@@ -540,12 +540,12 @@ body {
 
 .testimonial-row {
     display: flex;
-    animation: scroll 35s linear infinite reverse; /* Added reverse to reverse the animation direction */
+    animation: scroll 48s linear infinite reverse; /* Added reverse to reverse the animation direction */
     gap: 20px;
 }
 .testimonial-row-2 {
     display: flex;
-    animation: scroll-2 35s linear infinite reverse; /* Added reverse to reverse the animation direction */
+    animation: scroll-2 48s linear infinite reverse; /* Added reverse to reverse the animation direction */
     gap: 20px;
 }
 
@@ -1498,5 +1498,34 @@ footer .container {
 
     .faq-columns {
         flex-direction: column;
+    }
+
+    .testimonial-row {
+        display: flex;
+        animation: scrollMobile 50s linear infinite reverse; /* Added reverse to reverse the animation direction */
+        gap: 20px;
+    }
+    .testimonial-row-2 {
+        display: flex;
+        animation: scrollMobile-2 50s linear infinite reverse; /* Added reverse to reverse the animation direction */
+        gap: 20px;
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    
+    @keyframes scroll-2 {
+        0% {
+            transform: translateX(2);
+        }
+        100% {
+            transform: translateX(-98%);
+        }
     }
 }
