@@ -222,7 +222,14 @@ body {
 
 .hand-drawn {
     position: absolute;
+    left: -66px;
+    top: -40px;
 }
+
+.highlight-text {
+    color: #FF7F50;
+}
+
 
 /* Testimonial Styling */
 .testimonial {
@@ -1511,7 +1518,7 @@ footer .container {
         gap: 20px;
     }
     
-    @keyframes scroll {
+    @keyframes scrollMobile {
         0% {
             transform: translateX(0);
         }
@@ -1520,7 +1527,7 @@ footer .container {
         }
     }
     
-    @keyframes scroll-2 {
+    @keyframes scrollMobile-2 {
         0% {
             transform: translateX(2);
         }
