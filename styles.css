@@ -1001,15 +1001,15 @@ body {
 }
 
 #roles-row-1 {
-    animation: scroll-roles-1 40s linear infinite;
+    animation: scroll-roles-1 40s linear infinite reverse;
 }
 
 #roles-row-2 {
-    animation: scroll-roles-2 40s linear infinite;
+    animation: scroll-roles-2 40s linear infinite reverse;
 }
 
 #roles-row-3 {
-    animation: scroll-roles-3 40s linear infinite;
+    animation: scroll-roles-3 40s linear infinite reverse;
 }
 
 @keyframes scroll-roles-1 {
@@ -1355,41 +1355,41 @@ footer .container {
     
 
     #roles-row-1 {
-        animation: scroll-roles-1 80s linear infinite;
+        animation: scroll-roles-1 20s linear infinite reverse;
     }
 
     #roles-row-2 {
-        animation: scroll-roles-2 80s linear infinite;
+        animation: scroll-roles-2 20s linear infinite reverse;
     }
 
     #roles-row-3 {
-        animation: scroll-roles-3 80s linear infinite;
+        animation: scroll-roles-3 20s linear infinite reverse;
     }
 
     @keyframes scroll-roles-1 {
         0% {
-            transform: translateX(calc(-100px * 20));
+            transform: translateX(0);
         }
         100% {
-            transform: translateX(0);
+            transform: translateX(-100%);
         }
     }
 
     @keyframes scroll-roles-2 {
         0% {
-            transform: translateX(calc(-90px * 20));
+            transform: translateX(2%);
         }
         100% {
-            transform: translateX(0);
+            transform: translateX(-98%);
         }
     }
 
     @keyframes scroll-roles-3 {
         0% {
-            transform: translateX(calc(-80px * 20));
+            transform: translateX(4%);
         }
         100% {
-            transform: translateX(0);
+            transform: translateX(-96%);
         }
     }
 
