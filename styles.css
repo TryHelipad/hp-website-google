@@ -1014,28 +1014,28 @@ body {
 
 @keyframes scroll-roles-1 {
     0% {
-        transform: translateX(calc(-250px * 20));
+        transform: translateX(0);
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(-100%);
     }
 }
 
 @keyframes scroll-roles-2 {
     0% {
-        transform: translateX(calc(-230px * 20));
+        transform: translateX(2);
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(-98%);
     }
 }
 
 @keyframes scroll-roles-3 {
     0% {
-        transform: translateX(calc(-210px * 20));
+        transform: translateX(4);
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(-96%);
     }
 }
 
