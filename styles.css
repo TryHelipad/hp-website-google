@@ -36,7 +36,6 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    row-gap: 20px;
 }
 
 .logo img {
@@ -103,14 +102,55 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    background: transparent;
+    border: none;
+    gap: 4px;
 }
 
 .hamburger span {
     height: 3px;
     width: 25px;
     background: #FFFFFF;
-    margin-bottom: 4px;
     border-radius: 3px;
+}
+
+/* Mobile Navigation Styling */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background: #003366;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav li {
+    margin-bottom: 20px;
+}
+
+.mobile-nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.mobile-nav .cta {
+    margin-top: 20px;
+    width: 100%;
+    font-size: 0.9em;
 }
 
 /* Hero Section Styling */
@@ -560,6 +600,10 @@ body {
     padding: 60px 20px;
     background-color: #f9f9f9;
     text-align: center;
+}
+
+#timeline-cta {
+    margin-bottom: 40px;
 }
 
 .timeline-section .container {
@@ -1185,22 +1229,25 @@ footer .container {
 
 /* Responsive Styling */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
-    }
-
     .navigation {
         display: none;
+    }
+
+    .header-actions {
+        display: none; /* Hide header actions on mobile */
     }
 
     .hamburger {
         display: flex;
     }
 
-    .header-actions {
-        display: none; /* Hide header actions on mobile */
+    .mobile-nav.active {
+        display: block;
+        transform: translateX(0);
+    }
+
+    .mobile-nav ul {
+        margin-top: 60px; /* Ensure mobile nav does not overlap with header */
     }
 
     .hero .content {
