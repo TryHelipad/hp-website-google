@@ -39,7 +39,7 @@ body {
 .back-btn {
     background: none;
     border: none;
-    font-size: 2em;
+    font-size: 1.1em;
     color: #004080;
     cursor: pointer;
     position: absolute;
@@ -211,17 +211,6 @@ body {
 .cta:hover {
     background-color: #e67343;
     transform: scale(1.05);
-}
-
-.back-btn {
-    background: none;
-    border: none;
-    font-size: 2em;
-    color: #004080;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    left: 20px;
 }
 
 /* Select2 Custom Styles */

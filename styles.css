@@ -1239,6 +1239,16 @@ footer .container {
 
 /* Responsive Styling */
 @media (max-width: 768px) {
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 0;
+        background: linear-gradient(135deg, #003366, #004080);
+        min-height: 80vh;
+        margin: 0 auto;
+    }
+
     .navigation {
         display: none;
     }
@@ -1277,12 +1287,19 @@ footer .container {
     }
 
     .hero-image {
-        padding: 20px 0;
+        padding-top: 40px;
         width: auto;
     }
 
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
     .banner-heading {
-        font-size: 2em; /* Adjust heading size for mobile */
+        font-size: 2.5em; /* Adjust heading size for mobile */
         text-align: left; /* Align heading to the left on mobile */
     }
 
@@ -1481,6 +1498,12 @@ footer .container {
     .consultation-content {
         flex-direction: column;
         text-align: center;
+    }
+
+    .comparison-item strong {
+        font-size: 1em;
+        color: #333;
+        width: 150px;
     }
 
     .consultation-text,
