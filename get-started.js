@@ -22,7 +22,15 @@ $(document).ready(function() {
         }
     });
 
-    // Initialize Select2 for role dropdown
+      // Populate timezones dynamically with offsets
+      const timezoneSelect = $('select[name="preferred-timezone"]');
+      const timezones = moment.tz.names();
+      timezones.forEach(tz => {
+          const offset = moment.tz(tz).format('Z');
+          timezoneSelect.append(`<option value="${tz}">(UTC${offset}) ${tz}</option>`);
+      });
+
+    // Initialize Select2 for role dropdown with placeholder "Select Role"
     $('.role-select').select2({
         placeholder: 'Select Role',
         width: '100%',
@@ -31,13 +39,81 @@ $(document).ready(function() {
         minimumResultsForSearch: Infinity
     });
 
-    // Add another role
-    $('#add-role-btn').on('click', function() {
+       // Initialize Select2 for country dropdown with placeholder "Preferred Country"
+       $('.country-select').select2({
+        placeholder: 'Preferred Country',
+        width: '100%',
+        dropdownCssClass: 'custom-dropdown',
+        selectionCssClass: 'custom-selection',
+        templateResult: formatCountry,
+        templateSelection: formatCountry,
+        minimumResultsForSearch: Infinity
+    });
+
+
+       // Function to format country with flags in select2
+       function formatCountry (state) {
+        if (!state.id) {
+            return state.text;
+        }
+        const baseUrl = "https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/";
+        const $state = $(
+            '<span><img src="' + baseUrl + state.element.getAttribute('data-flag') + '.svg" class="flag-icon" /> ' + state.text + '</span>'
+        );
+        return $state;
+    }
+
+        // Handle increment and decrement buttons
+    $(document).on('click', '.increment', function() {
+        const input = $(this).siblings('.positions__input');
+        const currentValue = parseInt(input.val());
+        if (currentValue < 5) {
+            input.val(currentValue + 1);
+        }
+        toggleButtonState(input);
+    });
+
+    $(document).on('click', '.decrement', function() {
+        const input = $(this).siblings('.positions__input');
+        const currentValue = parseInt(input.val());
+        if (currentValue > 1) {
+            input.val(currentValue - 1);
+        }
+        toggleButtonState(input);
+    });
+
+    // Toggle the disabled state of increment and decrement buttons
+    function toggleButtonState(input) {
+        const currentValue = parseInt(input.val());
+        const decrementButton = input.siblings('.decrement');
+        const incrementButton = input.siblings('.increment');
+        
+        if (currentValue <= 1) {
+            decrementButton.prop('disabled', true);
+        } else {
+            decrementButton.prop('disabled', false);
+        }
+
+        if (currentValue >= 5) {
+            incrementButton.prop('disabled', true);
+        } else {
+            incrementButton.prop('disabled', false);
+        }
+    }
+
+    // Initial toggle button state on load
+    $('.positions__input').each(function() {
+        toggleButtonState($(this));
+    });
+
+       // Add role
+       $(document).on('click', '.add-role-btn', function() {
         const roleGroup = `
             <div class="form__group role-group">
                 <label for="role">Role to Fill:</label>
                 <select name="role[]" class="form__input role-select" required>
                     <option value="" disabled selected>Select Role</option>
+                    <!-- Add more roles as needed -->
                     <option value="AI Consultant">AI Consultant</option>
                     <option value="AI Developer">AI Developer</option>
                     <option value="AI Business Analyst">AI Business Analyst</option>
@@ -94,7 +170,20 @@ $(document).ready(function() {
                     <option value="Customer Support – Voice">Customer Support – Voice</option>
                     <option value="Virtual Assistant – Non Voice">Virtual Assistant – Non Voice</option>
                 </select>
-                <input type="number" name="positions[]" placeholder="Number of Positions" class="form__input" required>
+                <div class="positions-container">
+                    <label for="positions">Number of Positions:</label>
+                    <select name="positions[]" class="positions__dropdown" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="role-actions">
+                    <button type="button" class="add-role-btn">+</button>
+                    <button type="button" class="remove-role-btn">-</button>
+                </div>
             </div>
         `;
         $('#roles-container').append(roleGroup);
@@ -105,6 +194,13 @@ $(document).ready(function() {
             selectionCssClass: 'custom-selection',
             minimumResultsForSearch: Infinity
         });
+    });
+
+    // Remove role
+    $(document).on('click', '.remove-role-btn', function() {
+        if ($('#roles-container .role-group').length > 1) {
+            $(this).closest('.role-group').remove();
+        }
     });
 
     $('#submit-form').on('click', function() {
