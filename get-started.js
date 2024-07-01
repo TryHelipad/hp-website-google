@@ -135,8 +135,8 @@ $(document).ready(function() {
             });
             paymentElement.mount('#payment-element');
 
-            const form = document.getElementById('get-started-form');
-            form.addEventListener('submit', async (event) => {
+            const paymentForm = document.getElementById('payment-form');
+            paymentForm.addEventListener('submit', async (event) => {
                 event.preventDefault();
                 const { error } = await stripe.confirmPayment({
                     elements,
