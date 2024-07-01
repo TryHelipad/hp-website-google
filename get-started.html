@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
     <header class="header">
@@ -142,20 +143,21 @@
 
                 <!-- Payment Information -->
                 <div class="form-step" id="step-4">
-                    <div class="form__group">
-                        <label for="payment-element">Payment Information:</label>
-                        <div id="payment-element"></div>
-                    </div>
-                    <div id="payment-request-button"></div>
-                    <div id="error-message" role="alert"></div>
-                    <button type="submit" class="cta">Complete Payment</button>
+                    <form id="payment-form">
+                        <div class="form__group">
+                            <label for="payment-element">Payment Information:</label>
+                            <div id="payment-element"></div>
+                        </div>
+                        <div id="payment-request-button"></div>
+                        <div id="error-message" role="alert"></div>
+                        <button type="submit" class="cta">Complete Payment</button>
+                    </form>
                 </div>
             </form>
         </section>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://js.stripe.com/v3/"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="get-started.js"></script>
 </body>
