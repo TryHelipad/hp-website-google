@@ -36,6 +36,17 @@ body {
     max-width: 800px;
 }
 
+.back-btn {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #004080;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
 /* Intro Section Styles */
 .intro {
     margin-bottom: 40px;

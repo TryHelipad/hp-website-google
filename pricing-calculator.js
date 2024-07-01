@@ -7,7 +7,7 @@ $(document).ready(function() {
         minimumResultsForSearch: Infinity
     });
 
-    $('.option__btn').on('click', function() {
+    $('#need-help-btn').on('click', function() {
         $('.intro').hide();
         $('#help-section').show();
     });
@@ -15,6 +15,11 @@ $(document).ready(function() {
     $('#back-btn').on('click', function() {
         $('#help-section').hide();
         $('.intro').show();
+    });
+    
+    $('#know-what-i-want-btn').on('click', function() {
+        $('.intro').hide();
+        $('#roles-section').show();
     });
 
     $('#help-form').on('submit', function(e) {
