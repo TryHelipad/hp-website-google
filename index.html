@@ -771,7 +771,10 @@
                     <div class="consultation-text">
                         <h2>Still Unsure? Book a Consultation</h2>
                         <p>If you're still on the fence, let's discuss your needs. Book a free consultation with us, and we'll help you find the perfect staffing solution tailored to your business.</p>
-                        <button class="cta">Book Your Free Consultation</button>
+                        <button class="cta"><!-- Calendly link widget begin -->
+                            <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                            <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-tryhelipad/30min'});return false;">Free Consultation</a></button>
                     </div>
                     <div class="consultation-image">
                         <img src="resources/consultation-photo.png" alt="Consultation">
