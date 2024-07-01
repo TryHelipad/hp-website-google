@@ -141,16 +141,14 @@
                 </div>
 
                 <!-- Payment Information -->
-                <form id="payment-form">
-                    <div id="payment-element">
-                        <!--Stripe.js injects the Payment Element here-->
+                <div class="form-step" id="step-4">
+                    <div class="form__group">
+                        <label for="payment-element">Payment Information:</label>
+                        <div id="payment-element"></div>
                     </div>
-                    <div id="payment-request-button">
-                        <!-- A Stripe Element will be inserted here if the Payment Request API is available -->
-                    </div>
-                    <button id="submit">Pay $100</button>
-                    <div id="error-message"></div>
-                </form>
+                    <button type="submit" class="cta">Complete Payment</button>
+                </div>
+            </form>
         </section>
     </main>
 
