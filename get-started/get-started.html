@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helipad - Get Started</title>
+    <link rel="stylesheet" href="get-started.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <img src="resources/Helipad_logo_black.svg" alt="Helipad Logo" class="header__logo">
+    </header>
+
+    <main class="main-content">
+        <section class="get-started" id="get-started-section">
+            <button class="back-btn" id="get-started-back-btn">&#8592;</button>
+            <p class="get-started__subtitle">Let's Get Started with Your New Hire!</p>
+            <p class="centered-description">Fill out the form below, and our team will contact you within 2 hours to begin your search immediately.</p>
+            <form id="get-started-form" class="form">
+                <!-- Contact Information -->
+                <div class="form-step" id="step-1">
+                    <div class="form__group">
+                        <input type="text" name="full-name" placeholder="Full Name" class="form__input" required>
+                    </div>
+                    <div class="form__group">
+                        <input type="email" name="email" placeholder="Email Address" class="form__input" required>
+                    </div>
+                    <div class="form__group">
+                        <input type="tel" name="phone" placeholder="Phone Number" class="form__input" required>
+                    </div>
+                    <button type="button" class="cta next-step">Next</button>
+                </div>
+
+                <!-- Company Information -->
+                <div class="form-step" id="step-2">
+                    <div class="form__group">
+                        <input type="text" name="company-name" placeholder="Company Name" class="form__input" required>
+                    </div>
+                    <div class="form__group">
+                        <input type="text" name="job-title" placeholder="Job Title" class="form__input" required>
+                    </div>
+                    <div class="form__group">
+                        <select name="company-size" class="form__input" required>
+                            <option value="" disabled selected>Company Size</option>
+                            <option value="1-10">1-10</option>
+                            <option value="11-50">11-50</option>
+                            <option value="51-200">51-200</option>
+                            <option value="201-500">201-500</option>
+                            <option value="501-1000">501-1000</option>
+                            <option value="1001+">1001+</option>
+                        </select>
+                    </div>
+                    <div class="form__group">
+                        <select name="industry" class="form__input" required>
+                            <option value="" disabled selected>Industry</option>
+                            <option value="technology">Technology</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="finance">Finance</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="education">Education</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="button" class="cta next-step">Next</button>
+                </div>
+
+                <!-- Role Details -->
+                <div class="form-step" id="step-3">
+                    <div id="roles-container">
+                        <div class="form__group role-group">
+                            <label for="role">Role to Fill:</label>
+                            <select name="role[]" class="form__input role-select" required>
+                                <option value="" disabled selected>Select Role</option>
+                                <!-- Add more roles as needed -->
+                                <option value="AI Consultant">AI Consultant</option>
+                                <option value="AI Developer">AI Developer</option>
+                                <option value="AI Business Analyst">AI Business Analyst</option>
+                                <option value="Real Estate Contracts Administration">Real Estate Contracts Administration</option>
+                                <option value="Real Estate Administration Support">Real Estate Administration Support</option>
+                                <option value="Real Estate Lead Generation Specialist">Real Estate Lead Generation Specialist</option>
+                                <option value="Digital Marketer">Digital Marketer</option>
+                                <option value="Social Media Specialist">Social Media Specialist</option>
+                                <option value="Social Media Manager">Social Media Manager</option>
+                                <option value="Video Editor">Video Editor</option>
+                                <option value="Copywriter">Copywriter</option>
+                                <option value="Product Catalog Specialist">Product Catalog Specialist</option>
+                                <option value="Operations Manager">Operations Manager</option>
+                                <option value="Teleconsultant (Medical)">Teleconsultant (Medical)</option>
+                                <option value="Loan Processor">Loan Processor</option>
+                                <option value="Collections Officer">Collections Officer</option>
+                                <option value="Bid Manager">Bid Manager</option>
+                                <option value=".Net Developer">.Net Developer</option>
+                                <option value="Software engineer">Software engineer</option>
+                                <option value="Applications Developer">Applications Developer</option>
+                                <option value="Backend Developer">Backend Developer</option>
+                                <option value="Front End Developer">Front End Developer</option>
+                                <option value="Full Stack Developer">Full Stack Developer</option>
+                                <option value="Medical Transcription">Medical Transcription</option>
+                                <option value="Medical Receptionist">Medical Receptionist</option>
+                                <option value="Medical Billing">Medical Billing</option>
+                                <option value="Property Management Assistant">Property Management Assistant</option>
+                                <option value="Engineer">Engineer</option>
+                                <option value="Architect">Architect</option>
+                                <option value="CAD Designer">CAD Designer</option>
+                                <option value="Draftsperson">Draftsperson</option>
+                                <option value="HR Compensation and Benefits Specialist">HR Compensation and Benefits Specialist</option>
+                                <option value="HR Manager">HR Manager</option>
+                                <option value="HR Associate">HR Associate</option>
+                                <option value="Recruiter">Recruiter</option>
+                                <option value="Marketing Assistant">Marketing Assistant</option>
+                                <option value="SEO Specialist">SEO Specialist</option>
+                                <option value="Google Ads (PPC)">Google Ads (PPC)</option>
+                                <option value="Graphic Designer">Graphic Designer</option>
+                                <option value="Web Developer">Web Developer</option>
+                                <option value="Business Analyst">Business Analyst</option>
+                                <option value="Data Analyst">Data Analyst</option>
+                                <option value="Accountant">Accountant</option>
+                                <option value="Bookkeeper">Bookkeeper</option>
+                                <option value="Sales Lead Generation">Sales Lead Generation</option>
+                                <option value="Sales Support Admin">Sales Support Admin</option>
+                                <option value="Sales Specialist (B2B)">Sales Specialist (B2B)</option>
+                                <option value="IT Support (Level 2)">IT Support (Level 2)</option>
+                                <option value="IT Support (Level 1)">IT Support (Level 1)</option>
+                                <option value="Customer Support – Non- Voice">Customer Support – Non- Voice</option>
+                                <option value="Data Entry Specialist">Data Entry Specialist</option>
+                                <option value="E-Commerce Assistant">E-Commerce Assistant</option>
+                                <option value="Executive Assistant">Executive Assistant</option>
+                                <option value="Customer Support – Voice">Customer Support – Voice</option>
+                                <option value="Virtual Assistant – Non Voice">Virtual Assistant – Non Voice</option>
+                            </select>
+                            <input type="number" name="positions[]" placeholder="Number of Positions" class="form__input">
+                        </div>
+                    </div>
+                    <button type="button" class="cta" id="add-role-btn">Add Another Role</button>
+                    <button type="button" class="cta next-step">Next</button>
+                </div>
+
+                <!-- Payment Information -->
+                <div class="form-step" id="step-4">
+                    <div class="form__group">
+                        <label for="payment-element">Payment Information:</label>
+                        <div id="payment-element"></div>
+                    </div>
+                    <button type="submit" class="cta">Complete Payment</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="get-started.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helipad - Instant Pricing Calculator</title>
+    <link rel="stylesheet" href="pricing-calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <img src="resources/Helipad_logo_black.svg" alt="Helipad Logo" class="header__logo">
+    </header>
+    
+    <main class="main-content">
+        <section class="intro">
+            <h1 class="intro__title">We'll find you the best talent fast.</h1>
+            <p class="intro__subtitle">Choose the option that best describes you:</p>
+            <div class="intro__options">
+                <div class="option">
+                    <button class="option__btn" id="need-help-btn">
+                        <div class="option__icon">🔍</div>
+                        <div class="option__title">Help me choose</div>
+                        <div class="option__description">Not sure where to start? Let us guide you through finding the right talent for your needs.</div>
+                    </button>
+                </div>
+                <div class="option">
+                    <button class="option__btn" id="know-what-i-want-btn">
+                        <div class="option__icon">✅</div>
+                        <div class="option__title">I have a plan</div>
+                        <div class="option__description">Know exactly what you need? Jump straight into selecting from our list of available roles.</div>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="next-step" id="help-section">
+            <button class="back-btn" id="back-btn">&#8592;</button>
+            <p class="next-step__subtitle">What level of expertise are you looking for?</p>
+            <form id="help-form" class="form">
+                <div class="form__group">
+                    <div class="radio-group">
+                        <label class="radio">
+                            <input type="radio" name="experience-level" value="entry" required>
+                            <div class="radio-box">
+                                <span class="radio-custom"></span>
+                                Entry Level (0-2 years)
+                            </div>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="experience-level" value="mid">
+                            <div class="radio-box">
+                                <span class="radio-custom"></span>
+                                Mid Level (2-5 years)
+                            </div>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="experience-level" value="senior">
+                            <div class="radio-box">
+                                <span class="radio-custom"></span>
+                                Senior Level (5+ years)
+                            </div>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="experience-level" value="expert">
+                            <div class="radio-box">
+                                <span class="radio-custom"></span>
+                                Expert Level (10+ years)
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="cta">Get Instant Quote</button>
+            </form>
+        </section>
+        
+        <section class="next-step" id="hire-section">
+            <button class="back-btn" id="hire-back-btn">&#8592;</button>
+            <p class="next-step__subtitle">When do you need to hire by?</p>
+            <form id="hire-form" class="form">
+                <div class="form__group">
+                    <div class="radio-group">
+                        <label class="radio">
+                            <input type="radio" name="hire-timeline" value="immediately" required>
+                            <div class="radio-box">
+                                <span class="radio-custom"></span>
+                                Immediately
+                            </div>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="hire-timeline" value="within-1-month">
+                            <div class="radio-box">
+                                <span class="radio-custom"></span>
+                                Within 1 Month
+                            </div>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="hire-timeline" value="1-3-months">
+                            <div class="radio-box">
+                                <span class="radio-custom"></span>
+                                1-3 Months
+                            </div>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="hire-timeline" value="more-than-3-months">
+                            <div class="radio-box">
+                                <span class="radio-custom"></span>
+                                More than 3 Months
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="cta">Get Instant Quote</button>
+            </form>
+        </section>
+        
+        <section class="next-step" id="roles-section">
+            <button class="back-btn" id="roles-back-btn">&#8592;</button>
+            <p class="next-step__subtitle">Choose your desired roles</p>
+            <form id="roles-form" class="form">
+                <div class="form__group">
+                    <select class="roles-select" id="roles" name="roles[]" multiple="multiple">
+                        <option value="AI Consultant">AI Consultant</option>
+                        <option value="AI Developer">AI Developer</option>
+                        <option value="AI Business Analyst">AI Business Analyst</option>
+                        <option value="Real Estate Contracts Administration">Real Estate Contracts Administration</option>
+                        <option value="Real Estate Administration Support">Real Estate Administration Support</option>
+                        <option value="Real Estate Lead Generation Specialist">Real Estate Lead Generation Specialist</option>
+                        <option value="Digital Marketer">Digital Marketer</option>
+                        <option value="Social Media Specialist">Social Media Specialist</option>
+                        <option value="Social Media Manager">Social Media Manager</option>
+                        <option value="Video Editor">Video Editor</option>
+                        <option value="Copywriter">Copywriter</option>
+                        <option value="Product Catalog Specialist">Product Catalog Specialist</option>
+                        <option value="Operations Manager">Operations Manager</option>
+                        <option value="Teleconsultant (Medical)">Teleconsultant (Medical)</option>
+                        <option value="Loan Processor">Loan Processor</option>
+                        <option value="Collections Officer">Collections Officer</option>
+                        <option value="Bid Manager">Bid Manager</option>
+                        <option value=".Net Developer">.Net Developer</option>
+                        <option value="Software engineer">Software engineer</option>
+                        <option value="Applications Developer">Applications Developer</option>
+                        <option value="Backend Developer">Backend Developer</option>
+                        <option value="Front End Developer">Front End Developer</option>
+                        <option value="Full Stack Developer">Full Stack Developer</option>
+                        <option value="Medical Transcription">Medical Transcription</option>
+                        <option value="Medical Receptionist">Medical Receptionist</option>
+                        <option value="Medical Billing">Medical Billing</option>
+                        <option value="Property Management Assistant">Property Management Assistant</option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Architect">Architect</option>
+                        <option value="CAD Designer">CAD Designer</option>
+                        <option value="Draftsperson">Draftsperson</option>
+                        <option value="HR Compensation and Benefits Specialist">HR Compensation and Benefits Specialist</option>
+                        <option value="HR Manager">HR Manager</option>
+                        <option value="HR Associate">HR Associate</option>
+                        <option value="Recruiter">Recruiter</option>
+                        <option value="Marketing Assistant">Marketing Assistant</option>
+                        <option value="SEO Specialist">SEO Specialist</option>
+                        <option value="Google Adds (PPC)">Google Adds (PPC)</option>
+                        <option value="Graphic Designer">Graphic Designer</option>
+                        <option value="Web Developer">Web Developer</option>
+                        <option value="Business Analyst">Business Analyst</option>
+                        <option value="Data Analyst">Data Analyst</option>
+                        <option value="Accountant">Accountant</option>
+                        <option value="Bookkeeper">Bookkeeper</option>
+                        <option value="Sales Lead Generation">Sales Lead Generation</option>
+                        <option value="Sales Support Admin">Sales Support Admin</option>
+                        <option value="Sales Specialist (B2B)">Sales Specialist (B2B)</option>
+                        <option value="IT Support (Level 2)">IT Support (Level 2)</option>
+                        <option value="IT Support (Level 1)">IT Support (Level 1)</option>
+                        <option value="Customer Support – Non- Voice">Customer Support – Non- Voice</option>
+                        <option value="Data Entry Specialist">Data Entry Specialist</option>
+                        <option value="E-Commerce Assistant">E-Commerce Assistant</option>
+                        <option value="Executive Assistant">Executive Assistant</option>
+                        <option value="Customer Support – Voice">Customer Support – Voice</option>
+                        <option value="Virtual Assistant – Non Voice">Virtual Assistant – Non Voice</option>
+                    </select>
+                </div>
+                <button type="submit" class="cta">Get Instant Quote</button>
+            </form>
+        </section>
+        
+        <section class="next-step" id="contact-section">
+            <button class="back-btn" id="contact-back-btn">&#8592;</button>
+            <p class="next-step__subtitle">Contact Details</p>
+            <form id="contact-form" class="form">
+                <div class="form__group">
+                    <input type="text" name="name" placeholder="Name" class="form__input" required>
+                </div>
+                <div class="form__group">
+                    <input type="email" name="email" placeholder="Email" class="form__input" required>
+                </div>
+                <div class="form__group">
+                    <input type="tel" name="phone" placeholder="Phone Number" class="form__input" required>
+                </div>
+                <div class="form__group">
+                    <input type="text" name="company" placeholder="Company Name" class="form__input" required>
+                </div>
+                <button type="submit" class="cta">Get Instant Quote</button>
+            </form>
+        </section>
+
+        <section class="next-step" id="result-section">
+            <p class="next-step__subtitle">Your Instant Quote</p>
+            <p>Here is your instant quote for the chosen roles. You can choose to get started straight away by paying a small 100% refundable initiation fee. If you'd like further information
+                you can book a <!-- Calendly link widget begin -->
+                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-tryhelipad/30min'});return false;">free consultation</a>
+                <!-- Calendly link widget end --> with one of our recruitment experts.
+            </p>
+            <div id="quote-details"></div>
+            <button class="cta" id="get-started-btn" onclick="window.location.href='/get-started/get-started.html'">Get Started Now</button>
+        </section>
+
+        <section class="review">
+            <p>"Helipad's services have exceeded our expectations. Highly recommended!"</p>
+            <p class="review__reviewer">- Jane D.</p>
+            <div class="review__stars">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+            </div>
+        </section>
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="pricing-calculator.js"></script>
+</body>
+</html>
