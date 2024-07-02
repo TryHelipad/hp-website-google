@@ -282,7 +282,7 @@ $(document).ready(function() {
                             throw new Error('Failed to retrieve client secret');
                         }
 
-                        const elements = stripe.elements();
+                        const elements = stripe.elements({ clientSecret });
 
                         const paymentElement = elements.create('payment', {
                             style: {
