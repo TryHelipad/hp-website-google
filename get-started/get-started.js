@@ -272,7 +272,7 @@ $(document).ready(function() {
                 $('#get-started-section').hide();
                 $('#payment-section').show();
 
-                const stripe = Stripe('pk_test_51PLd8T2LIKsfGjNtAKpahmp5nOIswFAN2ccNPxbc4K4DEzGT4h5nQjPgkTPIyvXCcR83zc7gqAfeQCDza8DycrzL00Kv5UeOBl'); // Replace with your test publishable key
+                const stripe = Stripe('pk_live_51PLd8T2LIKsfGjNtTLRNJb1W4hEqkMooAqwwmyZe9fe8IwgIYp1OMoZaSCIrel33RPWm226N9wPM4v10vX1wEZay00Zn82ZDXh'); // Replace with your test publishable key
 
                 async function initializeStripe() {
                     try {
