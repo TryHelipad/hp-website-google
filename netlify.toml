@@ -1,7 +1,3 @@
-[build]
-  publish = "public"  # Replace with your actual publish directory
-  command = ""  # Leave empty if there's no build command
-
 [[redirects]]
   from = "/get-started"
   to = "/get-started/get-started.html"
