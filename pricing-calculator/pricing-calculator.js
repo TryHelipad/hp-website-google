@@ -134,6 +134,12 @@ $(document).ready(function() {
         let form = $(this);
         let quoteDetails = calculateQuote();
         
+        // Store contact details in localStorage
+        localStorage.setItem('name', $('input[name="name"]').val());
+        localStorage.setItem('email', $('input[name="email"]').val());
+        localStorage.setItem('phone', $('input[name="phone"]').val());
+        localStorage.setItem('company', $('input[name="company"]').val());
+        
         // Serialize the form data
         let formData = form.serialize();
         

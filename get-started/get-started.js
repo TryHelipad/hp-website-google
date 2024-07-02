@@ -2,6 +2,12 @@ $(document).ready(function() {
     const steps = $('.form-step');
     let currentStep = 0;
 
+    // Prefill the form with data from localStorage
+    $('input[name="full-name"]').val(localStorage.getItem('name'));
+    $('input[name="email"]').val(localStorage.getItem('email'));
+    $('input[name="phone"]').val(localStorage.getItem('phone'));
+    $('input[name="company-name"]').val(localStorage.getItem('company'));
+
     steps.eq(currentStep).addClass('active');
 
     function updateProgressBar() {
@@ -77,7 +83,6 @@ $(document).ready(function() {
         selectionCssClass: 'custom-selection',
         minimumResultsForSearch: Infinity
     });
-    
 
     // Initialize Select2 for country dropdown with placeholder "Preferred Country"
     $('.country-select').select2({
