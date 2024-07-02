@@ -130,9 +130,27 @@ $(document).ready(function() {
 
     $('#contact-form').on('submit', function(e) {
         e.preventDefault();
+        
+        let form = $(this);
         let quoteDetails = calculateQuote();
-        showSection(4);
-        $('#quote-details').html(quoteDetails);
+        
+        // Serialize the form data
+        let formData = form.serialize();
+        
+        // Send the form data using AJAX
+        $.ajax({
+            type: 'POST',
+            url: form.attr('action'),
+            data: formData,
+            success: function() {
+                $('#contact-section').hide();
+                $('#result-section').show();
+                $('#quote-details').html(quoteDetails);
+            },
+            error: function() {
+                alert('There was an error submitting the form. Please try again.');
+            }
+        });
     });
 
     // Initially hide all sections except intro
