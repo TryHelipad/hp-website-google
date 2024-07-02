@@ -272,7 +272,7 @@ $(document).ready(function() {
                 $('#get-started-section').hide();
                 $('#payment-section').show();
 
-                const stripe = Stripe('pk_test_51PLd8T2LIKsfGjNtAKpahmp5nOIswFAN2ccNPxbc4K4DEzGT4h5nQjPgkTPIyvXCcR83zc7gqAfeQCDza8DycrzL00Kv5UeOBl'); // Replace with your actual publishable key
+                const stripe = Stripe('pk_test_51PLd8T2LIKsfGjNtAKpahmp5nOIswFAN2ccNPxbc4K4DEzGT4h5nQjPgkTPIyvXCcR83zc7gqAfeQCDza8DycrzL00Kv5UeOBl'); // Replace with your test publishable key
 
                 async function initializeStripe() {
                     try {
@@ -282,9 +282,10 @@ $(document).ready(function() {
                             throw new Error('Failed to retrieve client secret');
                         }
 
-                        const elements = stripe.elements({ clientSecret });
+                        const elements = stripe.elements();
 
                         const paymentElement = elements.create('payment', {
+                            clientSecret: clientSecret,
                             style: {
                                 base: {
                                     fontSize: '16px',
