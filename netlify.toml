@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/pricing-calculator/pricing-calculator.html"
+to = "/pricing-calculator"
+status = 301
