@@ -285,7 +285,6 @@ $(document).ready(function() {
                         const elements = stripe.elements();
 
                         const paymentElement = elements.create('payment', {
-                            clientSecret: clientSecret,
                             style: {
                                 base: {
                                     fontSize: '16px',
