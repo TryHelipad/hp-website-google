@@ -2,3 +2,8 @@
 from = "/pricing-calculator/pricing-calculator.html"
 to = "/pricing-calculator"
 status = 301
+
+[[redirects]]
+from = "pricing-calculator/get-started.html"
+to = "/get-started"
+status = 301
