@@ -1,9 +1,0 @@
-[[redirects]]
-  from = "/get-started"
-  to = "/get-started/get-started.html"
-  status = 200
-
-[[redirects]]
-  from = "/pricing-calculator"
-  to = "/pricing-calculator/pricing-calculator.html"
-  status = 200
