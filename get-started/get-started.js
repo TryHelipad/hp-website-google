@@ -261,7 +261,7 @@ $(document).ready(function() {
         // Send the form data using AJAX
         $.ajax({
             type: 'POST',
-            url: '/create-payment-intent', // Replace with your Netlify function endpoint if needed
+            url: 'https://hp-stripe-backend-new-d5589f9679e0.herokuapp.com/create-payment-intent', // Replace with your actual endpoint
             data: JSON.stringify({
                 formData,
                 name: userName,
