@@ -180,7 +180,9 @@ body {
     font-family: 'Open Sans';
 }
 .form__input:focus {
-    border-color: #004080;
+    border-color: #FF7F50;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 127, 80, 0.2);
 }
 .radio-group {
     display: grid;
