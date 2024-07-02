@@ -17,6 +17,10 @@
         <img src="../resources/Helipad_logo_black.svg" alt="Helipad Logo" class="header__logo">
     </header>
 
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
     <main class="main-content">
         <section class="get-started" id="get-started-section">
             <a href="#" class="back-btn" id="get-started-back-btn">
@@ -29,13 +33,13 @@
                 <!-- Contact Information -->
                 <div class="form-step" id="step-1">
                     <div class="form__group">
-                        <input type="text" name="full-name" placeholder="Full Name" class="form__input" required>
+                        <input type="text" name="full-name" placeholder="Full Name *"  class="form__input" required>
                     </div>
                     <div class="form__group">
-                        <input type="email" name="email" placeholder="Email Address" class="form__input" required>
+                        <input type="email" name="email" placeholder="Email Address *" class="form__input" required>
                     </div>
                     <div class="form__group">
-                        <input type="tel" name="phone" placeholder="Phone Number" class="form__input" required>
+                        <input type="tel" name="phone" placeholder="Phone Number *" class="form__input" required>
                     </div>
                     <button type="button" class="cta next-step">Next</button>
                 </div>
@@ -43,17 +47,17 @@
                 <!-- Company Information -->
                 <div class="form-step" id="step-2">
                     <div class="form__group">
-                        <input type="text" name="company-name" placeholder="Company Name" class="form__input" required>
+                        <input type="text" name="company-name" placeholder="Company Name *" class="form__input" required>
                     </div>
                     <div class="form__group">
-                        <input type="text" name="job-title" placeholder="Job Title" class="form__input" required>
+                        <input type="text" name="job-title" placeholder="Job Title *" class="form__input" required>
                     </div>
                     <div class="form__group">
                         <input type="url" name="company-website" placeholder="Company Website" class="form__input">
                     </div>
                     <div class="form__group">
                         <select name="company-size" class="form__input" required>
-                            <option value="" disabled selected>Company Size</option>
+                            <option value="" disabled selected>Company Size *</option>
                             <option value="1-10">1-10</option>
                             <option value="11-50">11-50</option>
                             <option value="51-200">51-200</option>
@@ -64,7 +68,7 @@
                     </div>
                     <div class="form__group">
                         <select name="industry" class="form__input" required>
-                            <option value="" disabled selected>Industry</option>
+                            <option value="" disabled selected>Industry *</option>
                             <option value="technology">Technology</option>
                             <option value="healthcare">Healthcare</option>
                             <option value="finance">Finance</option>
@@ -83,13 +87,13 @@
                 <!-- Role Details -->
                 <div class="form-step" id="step-3">
                     <div class="form__group">
-                        <textarea name="current-challenges" placeholder="What are your current challenges?" class="form__input" rows="4" required></textarea>
+                        <textarea name="current-challenges" placeholder="What are your current challenges? *" class="form__input" rows="4" required></textarea>
                     </div>
                     <div id="roles-container">
                         <div class="form__group role-group">
                             <label for="role">Role to Fill:</label>
                             <select name="role[]" class="form__input role-select" required>
-                                <option value="" disabled selected>Select Role</option>
+                                <option value="" disabled selected>Select Role *</option>
                                 <!-- Role options -->
                                 <option value="AI Consultant">AI Consultant</option>
                                 <option value="AI Developer">AI Developer</option>
@@ -166,7 +170,7 @@
                     
                     <div class="form__group">
                         <select name="preferred-timezone" class="form__input" required>
-                            <option value="" disabled selected>Preferred Working Timezone</option>
+                            <option value="" disabled selected>Preferred Working Timezone *</option>
                             <!-- Timezone options will be populated by JavaScript -->
                         </select>
                     </div>
@@ -180,20 +184,35 @@
                             <option value="PL" data-flag="pl">Poland</option>
                             <option value="MX" data-flag="mx">Mexico</option>
                             <option value="ZA" data-flag="za">South Africa</option>
+                            <option value="best-fit">🌟 Choose Best Fit</option>
                         </select>
                     </div>
                     <div class="form__group">
-                        <input type="text" name="skill-requirements" placeholder="Specific Skill Requirements" class="form__input" required>
+                        <input type="text" name="skill-requirements" placeholder="Specific Skill Requirements *" class="form__input" required>
                     </div>
                     <div class="form__group">
-                        <input type="text" name="hiring-timeline" placeholder="Timeline for Hiring" class="form__input" required>
+                        <select name="hiring-timeline" class="form__input" required>
+                            <option value="" disabled selected>Timeline for Hiring *</option>
+                            <option value="Immediately">Immediately</option>
+                            <option value="Within 1 month">Within 1 month</option>
+                            <option value="1-3 months">1-3 months</option>
+                            <option value="3-6 months">3-6 months</option>
+                            <option value="6+ months">6+ months</option>
+                        </select>
                     </div>
                     <div class="form__group">
-                        <input type="text" name="budget-range" placeholder="Budget Range" class="form__input" required>
+                        <select name="budget-range" class="form__input" required>
+                            <option value="" disabled selected>Budget Range *</option>
+                            <option value="Below $1,000">Below $1,000</option>
+                            <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                            <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                            <option value="$10,000 - $20,000">$10,000 - $20,000</option>
+                            <option value="Above $20,000">Above $20,000</option>
+                        </select>
                     </div>
                     <div class="form__group">
                         <select name="preferred-communication" class="form__input" required>
-                            <option value="" disabled selected>Preferred Communication Method</option>
+                            <option value="" disabled selected>Preferred Communication Method *</option>
                             <option value="phone">Phone</option>
                             <option value="email">Email</option>
                             <option value="video-call">Video Call</option>
@@ -203,6 +222,7 @@
                         <textarea name="additional-comments" placeholder="Additional Comments" class="form__input" rows="4"></textarea>
                     </div>
                     <button type="button" class="cta next-step" id="submit-form">Submit</button>
+                    
                 </div>
             </form>
         </section>
@@ -223,7 +243,7 @@
                     <span>$100.00</span>
                 </div>
                 <p class="refund-policy">
-                    Note: The initiation fee is fully refundable.
+                    Note: The initiation fee is fully refundable if we don't find you the perfect hire.
                 </p>
             </div>
             <form id="payment-form" class="form">

@@ -149,21 +149,21 @@ function calculateQuote() {
         let responsibilities = getResponsibilities(role);
 
         quoteDetails += `
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">${role}</div>
-                    <div class="card-prices">
-                        <p><strong>Entry Level (0-2 years):</strong> ${prices.entry}</p>
-                        <p><strong>Mid Level (2-5 years):</strong> ${prices.mid}</p>
-                        <p><strong>Senior Level (5+ years):</strong> ${prices.senior}</p>
-                        <p><strong>Expert Level (10+ years):</strong> ${prices.expert}</p>
-                    </div>
-                </div>
-                <div class="card-responsibilities">
-                    <strong>Responsibilities:</strong>
-                    <ul>${responsibilities}</ul>
-                </div>
+        <div class="card">
+        <div class="card-header">
+            <div class="card-title">${role}</div>
+            <div class="card-prices">
+                <p><strong>Entry Level:</strong> ${prices.entry}</p>
+                <p><strong>Mid Level:</strong> ${prices.mid}</p>
+                <p><strong>Senior Level:</strong> ${prices.senior}</p>
+                <p><strong>Expert Level:</strong> ${prices.expert}</p>
             </div>
+        </div>
+        <div class="card-responsibilities">
+            <strong>Responsibilities:</strong>
+            <ul>${responsibilities}</ul>
+        </div>
+    </div>
         `;
     });
 
@@ -173,10 +173,10 @@ function calculateQuote() {
 
 function getPrices(role) {
     const basePrices = {
-        'entry': 8,
-        'mid': 15,
-        'senior': 25,
-        'expert': 32
+        'entry': 6,
+        'mid': 12,
+        'senior': 20,
+        'expert': 28,
     };
 
     const roleAdjustments = {

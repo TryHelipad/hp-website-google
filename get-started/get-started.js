@@ -4,11 +4,39 @@ $(document).ready(function() {
 
     steps.eq(currentStep).addClass('active');
 
+    function updateProgressBar() {
+        const progressPercentage = (currentStep / (steps.length - 1)) * 100;
+        $('#progress-bar').css('width', `${progressPercentage}%`);
+    }
+
+    function validateStep(step) {
+        let isValid = true;
+        steps.eq(step).find('input, select, textarea').each(function() {
+            if (!this.checkValidity()) {
+                isValid = false;
+                $(this).addClass('invalid');
+            } else {
+                $(this).removeClass('invalid');
+            }
+        });
+        return isValid;
+    }
+
+    function toggleNextButton() {
+        const isStepValid = validateStep(currentStep);
+        const nextButton = steps.eq(currentStep).find('.next-step');
+        nextButton.prop('disabled', !isStepValid);
+    }
+
     $('.next-step').on('click', function() {
-        if (currentStep < steps.length - 1) {
-            steps.eq(currentStep).removeClass('active');
-            currentStep++;
-            steps.eq(currentStep).addClass('active');
+        if (validateStep(currentStep)) {
+            if (currentStep < steps.length - 1) {
+                steps.eq(currentStep).removeClass('active');
+                currentStep++;
+                steps.eq(currentStep).addClass('active');
+                updateProgressBar();
+                toggleNextButton();
+            }
         }
     });
 
@@ -17,31 +45,43 @@ $(document).ready(function() {
             steps.eq(currentStep).removeClass('active');
             currentStep--;
             steps.eq(currentStep).addClass('active');
+            updateProgressBar();
+            toggleNextButton();
         } else {
             window.history.back();
         }
     });
 
-      // Populate timezones dynamically with offsets
-      const timezoneSelect = $('select[name="preferred-timezone"]');
-      const timezones = moment.tz.names();
-      timezones.forEach(tz => {
-          const offset = moment.tz(tz).format('Z');
-          timezoneSelect.append(`<option value="${tz}">(UTC${offset}) ${tz}</option>`);
-      });
+    // Validate fields on input and change events
+    steps.find('input, select, textarea').on('input change', function() {
+        $(this).removeClass('invalid');
+        toggleNextButton();
+    });
+
+    // Initial validation check
+    toggleNextButton();
+
+    // Populate timezones dynamically with offsets
+    const timezoneSelect = $('select[name="preferred-timezone"]');
+    const timezones = moment.tz.names();
+    timezones.forEach(tz => {
+        const offset = moment.tz(tz).format('Z');
+        timezoneSelect.append(`<option value="${tz}">(UTC${offset}) ${tz}</option>`);
+    });
 
     // Initialize Select2 for role dropdown with placeholder "Select Role"
     $('.role-select').select2({
-        placeholder: 'Select Role',
+        placeholder: 'Select Role *',
         width: '100%',
         dropdownCssClass: 'custom-dropdown',
         selectionCssClass: 'custom-selection',
         minimumResultsForSearch: Infinity
     });
+    
 
-       // Initialize Select2 for country dropdown with placeholder "Preferred Country"
-       $('.country-select').select2({
-        placeholder: 'Preferred Country',
+    // Initialize Select2 for country dropdown with placeholder "Preferred Country"
+    $('.country-select').select2({
+        placeholder: 'Preferred Country *',
         width: '100%',
         dropdownCssClass: 'custom-dropdown',
         selectionCssClass: 'custom-selection',
@@ -50,20 +90,19 @@ $(document).ready(function() {
         minimumResultsForSearch: Infinity
     });
 
-
-       // Function to format country with flags in select2
-       function formatCountry (state) {
+    // Function to format country with flags in select2
+    function formatCountry(state) {
         if (!state.id) {
             return state.text;
         }
         const baseUrl = "https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/";
         const $state = $(
-            '<span><img src="' + baseUrl + state.element.getAttribute('data-flag') + '.svg" class="flag-icon" /> ' + state.text + '</span>'
+            `<span><img src="${baseUrl}${state.element.getAttribute('data-flag')}.svg" class="flag-icon" /> ${state.text}</span>`
         );
         return $state;
     }
 
-        // Handle increment and decrement buttons
+    // Handle increment and decrement buttons
     $(document).on('click', '.increment', function() {
         const input = $(this).siblings('.positions__input');
         const currentValue = parseInt(input.val());
@@ -87,7 +126,7 @@ $(document).ready(function() {
         const currentValue = parseInt(input.val());
         const decrementButton = input.siblings('.decrement');
         const incrementButton = input.siblings('.increment');
-        
+
         if (currentValue <= 1) {
             decrementButton.prop('disabled', true);
         } else {
@@ -106,13 +145,12 @@ $(document).ready(function() {
         toggleButtonState($(this));
     });
 
-       // Add role
-       $(document).on('click', '.add-role-btn', function() {
+    // Add role
+    $(document).on('click', '.add-role-btn', function() {
         const roleGroup = `
             <div class="form__group role-group">
-                <label for="role">Role to Fill:</label>
                 <select name="role[]" class="form__input role-select" required>
-                    <option value="" disabled selected>Select Role</option>
+                    <option value="" disabled selected>Select Role *</option>
                     <!-- Add more roles as needed -->
                     <option value="AI Consultant">AI Consultant</option>
                     <option value="AI Developer">AI Developer</option>
@@ -188,7 +226,7 @@ $(document).ready(function() {
         `;
         $('#roles-container').append(roleGroup);
         $('.role-select').last().select2({
-            placeholder: 'Select Role',
+            placeholder: 'Select Role *',
             width: '100%',
             dropdownCssClass: 'custom-dropdown',
             selectionCssClass: 'custom-selection',
@@ -291,4 +329,7 @@ $(document).ready(function() {
 
         initializeStripe();
     });
+
+    // Initialize the progress bar
+    updateProgressBar();
 });
