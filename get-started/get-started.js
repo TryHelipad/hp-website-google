@@ -255,13 +255,20 @@ $(document).ready(function() {
 
         // Serialize the form data
         let formData = $(this).serialize();
+        let userName = $('input[name="full-name"]').val();
+        let userEmail = $('input[name="email"]').val();
 
         // Send the form data using AJAX
         $.ajax({
             type: 'POST',
-            url: '/', // Replace with your Netlify function endpoint if needed
-            data: formData,
-            success: function() {
+            url: '/create-payment-intent', // Replace with your Netlify function endpoint if needed
+            data: JSON.stringify({
+                formData,
+                name: userName,
+                email: userEmail
+            }),
+            contentType: 'application/json',
+            success: function(response) {
                 $('#get-started-section').hide();
                 $('#payment-section').show();
 
@@ -269,13 +276,7 @@ $(document).ready(function() {
 
                 async function initializeStripe() {
                     try {
-                        const response = await fetch('https://hp-stripe-backend-new-d5589f9679e0.herokuapp.com/create-payment-intent', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                        });
-                        const { clientSecret } = await response.json();
+                        const clientSecret = response.clientSecret;
 
                         if (!clientSecret) {
                             throw new Error('Failed to retrieve client secret');
@@ -300,6 +301,12 @@ $(document).ready(function() {
                                 elements,
                                 confirmParams: {
                                     return_url: 'https://your-website.com/checkout-success',
+                                    payment_method_data: {
+                                        billing_details: {
+                                            name: userName,
+                                            email: userEmail
+                                        }
+                                    }
                                 },
                             });
 
