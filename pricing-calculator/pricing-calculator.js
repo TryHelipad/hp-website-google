@@ -72,6 +72,72 @@ $(document).ready(function() {
         Calendly.initPopupWidget({ url: 'https://calendly.com/hello-tryhelipad/30min' });
         return false;
     });
+
+    // Add the new progress bar functionality
+    const sections = ['#help-section', '#hire-section', '#roles-section', '#contact-section', '#result-section'];
+    let currentStep = 0;
+
+    function updateProgressBar() {
+        const progressPercentage = (currentStep / (sections.length - 1)) * 100;
+        $('#progress-bar').css('width', `${progressPercentage}%`);
+    }
+
+    function showSection(index) {
+        $(sections).hide();
+        if (index >= 0) {
+            $(sections[index]).show();
+        }
+        currentStep = index;
+        updateProgressBar();
+    }
+
+    $('#need-help-btn').on('click', function() {
+        $('.intro').hide();
+        showSection(0);
+    });
+
+    $('#back-btn').on('click', function() {
+        $('.intro').show();
+        showSection(-1);
+    });
+    
+    $('#help-form').on('submit', function(e) {
+        e.preventDefault();
+        showSection(1);
+    });
+
+    $('#hire-back-btn').on('click', function() {
+        showSection(0);
+    });
+
+    $('#hire-form').on('submit', function(e) {
+        e.preventDefault();
+        showSection(2);
+    });
+
+    $('#roles-back-btn').on('click', function() {
+        showSection(1);
+    });
+
+    $('#roles-form').on('submit', function(e) {
+        e.preventDefault();
+        showSection(3);
+    });
+
+    $('#contact-back-btn').on('click', function() {
+        showSection(2);
+    });
+
+    $('#contact-form').on('submit', function(e) {
+        e.preventDefault();
+        let quoteDetails = calculateQuote();
+        showSection(4);
+        $('#quote-details').html(quoteDetails);
+    });
+
+    // Initially hide all sections except intro
+    $(sections).hide();
+    $('.intro').show();
 });
 
 function calculateQuote() {

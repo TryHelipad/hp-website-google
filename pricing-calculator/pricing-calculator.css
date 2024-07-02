@@ -30,6 +30,24 @@ body {
     margin-bottom: 50px;
 }
 
+/* Progress Bar Styles */
+.progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    margin: 20px 0;
+    max-width: 800px;
+}
+
+.progress-bar {
+    width: 0;
+    height: 10px;
+    background-color: #004080;
+    border-radius: 25px;
+    transition: width 0.4s ease; /* Add transition for smooth animation */
+}
+
+
 /* Main Content Styles */
 .main-content {
     width: 100%;
@@ -152,13 +170,18 @@ body {
 
 .form__input, .form__input:focus, .form__input:active, .form__input:hover {
     width: 100%;
-    padding: 10px;
-    border: 2px solid #ccc;
+    padding: 12px;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
     outline: none;
+    transition: border-color 0.3s ease;
+    font-weight: 300;
+    font-family: 'Open Sans';
 }
-
+.form__input:focus {
+    border-color: #004080;
+}
 .radio-group {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -275,13 +298,14 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 300px;
+    /* max-width: 300px; */
     padding: 20px;
     margin: 10px;
     text-align: left;
     transition: transform 0.3s;
+    display: flex;
+    justify-content: space-around;
 }
-
 .card:hover {
     transform: scale(1.05);
 }
@@ -307,14 +331,26 @@ body {
 
 .card-prices p {
     margin: 5px 0;
+    font-size: 15px;
+}
+
+.card-prices strong {
+    font-size: 15px;
 }
 
 .card-responsibilities {
     margin-top: 10px;
+    align-content: center;
+}
+
+.card-responsibilities strong {
+    margin-bottom: 10px;
+    font-size: 15px;
 }
 
 .card-responsibilities ul {
     padding-left: 20px;
+    margin-top: 17px;
     list-style-type: disc;
 }
 
@@ -335,8 +371,9 @@ body {
 }
 
 #quote-details p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
+    font-size: 15px;
+    padding-bottom: 10px;
+    border-bottom: grey 1px solid;
 }
 
 .review {
@@ -423,5 +460,20 @@ body {
 
     .card {
         width: 100%;
+    }
+
+    .card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        /* max-width: 300px; */
+        padding: 20px;
+        margin: 10px;
+        text-align: left;
+        transition: transform 0.3s;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
     }
 }
