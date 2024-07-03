@@ -86,6 +86,8 @@ $(document).ready(function() {
     document.addEventListener('DOMContentLoaded', function() {
         var modal = document.getElementById("leadMagnetModal");
         var span = document.getElementsByClassName("close")[0];
+        var lastTouchY = 0;
+        var lastTouchTime = 0;
     
         function showModal() {
             modal.style.display = "flex";
@@ -107,11 +109,45 @@ $(document).ready(function() {
             }
         }
     
-        // Exit intent detection
+        // Exit intent detection for desktop
         document.addEventListener('mouseleave', function(event) {
             if (event.clientY < 0) {
                 showModal();
             }
         });
-    });   
+    
+        // Exit intent detection for mobile
+        document.addEventListener('touchstart', function(event) {
+            var touchY = event.touches[0].clientY;
+            var touchTime = new Date().getTime();
+    
+            if (lastTouchY !== 0 && touchY > lastTouchY && touchTime - lastTouchTime < 500) {
+                showModal();
+            }
+    
+            lastTouchY = touchY;
+            lastTouchTime = touchTime;
+        });
+    
+        // Inactivity detection for mobile
+        var inactivityTime = function () {
+            var time;
+            window.onload = resetTimer;
+            document.onmousemove = resetTimer;
+            document.onkeypress = resetTimer;
+            document.addEventListener('touchstart', resetTimer);
+            document.addEventListener('scroll', resetTimer);
+    
+            function showPopup() {
+                showModal();
+            }
+    
+            function resetTimer() {
+                clearTimeout(time);
+                time = setTimeout(showPopup, 30000); // 30 seconds of inactivity
+            }
+        };
+    
+        inactivityTime();
+    });       
 });
