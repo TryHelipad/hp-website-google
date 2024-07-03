@@ -103,7 +103,7 @@ $(document).ready(function() {
     if (!localStorage.getItem('modalShown')) {
         // Exit intent detection for desktop
         document.addEventListener('mouseleave', function(event) {
-            if (event.clientY < 0) {
+            if (event.clientY <= 0) {
                 showModal();
             }
         });
