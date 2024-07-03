@@ -130,7 +130,7 @@ $(document).ready(function() {
         });
     
         // Inactivity detection for mobile
-        var inactivityTime = function () {
+        var inactivityTime = function() {
             var time;
             window.onload = resetTimer;
             document.onmousemove = resetTimer;
@@ -149,5 +149,5 @@ $(document).ready(function() {
         };
     
         inactivityTime();
-    });       
+    });           
 });
