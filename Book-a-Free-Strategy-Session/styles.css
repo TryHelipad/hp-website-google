@@ -661,6 +661,7 @@ li {
     font-size: 1.5em; /* Match the font size with other headings */
     color: #000000; /* Match the text color */
     margin-bottom: 20px; /* Consistent spacing */
+    font-weight: 100;
 }
 
 .cost-section h1 {
@@ -708,22 +709,33 @@ li {
 }
 
 .comparison-card {
-    background-color: #003366; /* Dark blue background */
-    border: 2px solid #ff6600; /* Orange border */
-    border-radius: 10px; /* Match the section border radius */
+    background-color: #003366;
+    border: 2px solid #ccc;
+    border-radius: 10px;
     padding: 20px;
     width: 45%;
     text-align: left;
-    color: #ffffff; /* White text */
+    color: #ffffff;
+    box-shadow: 0px 0px 15px 3px #bcddff;background-color: #003366;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%;
+    text-align: left;
+    color: #ffffff;
+    box-shadow: 0px 0px 15px 3px #bcddff;
 }
 
 .comparison-card h3 {
     font-size: 1.5em; /* Match the font size with other subheadings */
     margin-bottom: 15px; /* Consistent spacing */
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
 }
 
 .comparison-card .comparison-details {
-    font-size: 1.2em; /* Match the font size with other paragraphs */
+    font-size: 0.6em; /* Match the font size with other paragraphs */
     line-height: 1.5; /* Consistent line height */
 }
 
