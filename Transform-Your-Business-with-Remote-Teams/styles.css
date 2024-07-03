@@ -697,6 +697,19 @@ footer .container {
         order: -1;
         margin-bottom: 20px;
     }
+    .lead-magnet-text ul li {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        padding-left: 30px;
+        position: relative;
+    }
+    .lead-magnet-text ul {
+        list-style: none;
+        margin-bottom: 20px;
+        column-gap: 20px;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* Media Queries */
