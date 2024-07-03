@@ -102,14 +102,14 @@ $(document).ready(function() {
     // Check if the modal has already been shown
     if (!localStorage.getItem('modalShown')) {
         // Exit intent detection for desktop
-        document.addEventListener('mouseleave', function (event) {
+        document.addEventListener('mouseleave', function(event) {
             if (event.clientY < 0) {
                 showModal();
             }
         });
 
         // Exit intent detection for mobile
-        document.addEventListener('touchstart', function (event) {
+        document.addEventListener('touchstart', function(event) {
             var touchY = event.touches[0].clientY;
             var touchTime = new Date().getTime();
 
@@ -122,7 +122,7 @@ $(document).ready(function() {
         });
 
         // Inactivity detection for mobile
-        var inactivityTime = function () {
+        var inactivityTime = function() {
             var time;
             window.onload = resetTimer;
             document.onmousemove = resetTimer;
@@ -144,12 +144,12 @@ $(document).ready(function() {
     }
 
     // Close the modal when the user clicks on <span> (x)
-    span.onclick = function () {
+    span.onclick = function() {
         hideModal();
     }
 
     // Close the modal when the user clicks anywhere outside of the modal
-    window.onclick = function (event) {
+    window.onclick = function(event) {
         if (event.target === modal) {
             hideModal();
         }
