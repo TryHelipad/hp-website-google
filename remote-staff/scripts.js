@@ -162,7 +162,7 @@ $(document).ready(function() {
         var form = $(this);
 
         // Display the thank you message
-        var thankYouMessage = $('<p class="thank-you-message">Thank you! Your form submission has been received.</p>');
+        var thankYouMessage = $('<p class="thank-you-message">Thank you! Your Free Guide Is On Its Way To Your Inbox.</p>');
         form.replaceWith(thankYouMessage);
     });
 });
