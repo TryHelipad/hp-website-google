@@ -770,6 +770,13 @@ footer .container {
         margin-bottom: 20px;
         text-align: left;
     }
+    .modal-content h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+        text-align: left;
+    }
 }
 
 
