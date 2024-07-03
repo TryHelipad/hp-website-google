@@ -83,4 +83,35 @@ $(document).ready(function() {
             }
         }
     });
+    document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById("leadMagnetModal");
+        var span = document.getElementsByClassName("close")[0];
+    
+        function showModal() {
+            modal.style.display = "flex";
+        }
+    
+        function hideModal() {
+            modal.style.display = "none";
+        }
+    
+        // Close the modal when the user clicks on <span> (x)
+        span.onclick = function() {
+            hideModal();
+        }
+    
+        // Close the modal when the user clicks anywhere outside of the modal
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                hideModal();
+            }
+        }
+    
+        // Exit intent detection
+        document.addEventListener('mouseleave', function(event) {
+            if (event.clientY < 0) {
+                showModal();
+            }
+        });
+    });   
 });
