@@ -96,6 +96,51 @@ $(document).ready(function() {
 
     function hideModal() {
         modal.style.display = "none";
+        localStorage.setItem('leadMagnetShown', 'true');
+    }
+
+    // Check if the modal has already been shown
+    if (!localStorage.getItem('leadMagnetShown')) {
+        // Exit intent detection for desktop
+        document.addEventListener('mouseleave', function(event) {
+            if (event.clientY < 0) {
+                showModal();
+            }
+        });
+
+        // Exit intent detection for mobile
+        document.addEventListener('touchstart', function(event) {
+            var touchY = event.touches[0].clientY;
+            var touchTime = new Date().getTime();
+
+            if (lastTouchY !== 0 && touchY > lastTouchY && touchTime - lastTouchTime < 500) {
+                showModal();
+            }
+
+            lastTouchY = touchY;
+            lastTouchTime = touchTime;
+        });
+
+        // Inactivity detection for mobile
+        var inactivityTime = function() {
+            var time;
+            window.onload = resetTimer;
+            document.onmousemove = resetTimer;
+            document.onkeypress = resetTimer;
+            document.addEventListener('touchstart', resetTimer);
+            document.addEventListener('scroll', resetTimer);
+
+            function showPopup() {
+                showModal();
+            }
+
+            function resetTimer() {
+                clearTimeout(time);
+                time = setTimeout(showPopup, 30000); // 30 seconds of inactivity
+            }
+        };
+
+        inactivityTime();
     }
 
     // Close the modal when the user clicks on <span> (x)
@@ -109,45 +154,4 @@ $(document).ready(function() {
             hideModal();
         }
     }
-
-    // Exit intent detection for desktop
-    document.addEventListener('mouseleave', function(event) {
-        if (event.clientY < 0) {
-            showModal();
-        }
-    });
-
-    // Exit intent detection for mobile
-    document.addEventListener('touchstart', function(event) {
-        var touchY = event.touches[0].clientY;
-        var touchTime = new Date().getTime();
-
-        if (lastTouchY !== 0 && touchY > lastTouchY && touchTime - lastTouchTime < 500) {
-            showModal();
-        }
-
-        lastTouchY = touchY;
-        lastTouchTime = touchTime;
-    });
-
-    // Inactivity detection for mobile
-    var inactivityTime = function() {
-        var time;
-        window.onload = resetTimer;
-        document.onmousemove = resetTimer;
-        document.onkeypress = resetTimer;
-        document.addEventListener('touchstart', resetTimer);
-        document.addEventListener('scroll', resetTimer);
-
-        function showPopup() {
-            showModal();
-        }
-
-        function resetTimer() {
-            clearTimeout(time);
-            time = setTimeout(showPopup, 30000); // 30 seconds of inactivity
-        }
-    };
-
-    inactivityTime();
 });
