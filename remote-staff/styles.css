@@ -713,6 +713,10 @@ footer .container {
     color: #ffffff;
 }
 
+.modal-content ul {
+    margin-bottom: 20px;
+}
+
 .modal-content ul li {
     font-size: 1.2em;
     margin-bottom: 10px;
