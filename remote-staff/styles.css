@@ -762,6 +762,12 @@ footer .container {
     .modal-content {
         width: 90%;
     }
+
+    .lead-magnet-text ul {
+        list-style: none;
+        margin-bottom: 20px;
+        text-align: left;
+    }
 }
 
 
