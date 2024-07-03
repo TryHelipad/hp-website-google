@@ -97,10 +97,11 @@ $(document).ready(function() {
 
     function hideModal() {
         modal.style.display = "none";
+        localStorage.setItem('modalClosed', 'true'); // Set a flag indicating the modal was closed
     }
 
-    // Check if the modal has already been shown
-    if (!localStorage.getItem('modalShown')) {
+    // Check if the modal has already been shown or closed
+    if (!localStorage.getItem('modalShown') && !localStorage.getItem('modalClosed')) {
         // Exit intent detection for desktop
         document.addEventListener('mouseleave', function(event) {
             if (event.clientY <= 0) {
@@ -154,4 +155,14 @@ $(document).ready(function() {
             hideModal();
         }
     }
+
+    // Form submission handling
+    $('form.lead-magnet-form').submit(function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        var form = $(this);
+
+        // Display the thank you message
+        var thankYouMessage = $('<p class="thank-you-message">Thank you! Your form submission has been received.</p>');
+        form.replaceWith(thankYouMessage);
+    });
 });
