@@ -309,8 +309,15 @@ body {
     gap: 40px;
 }
 
+.section li {
+    list-style: none;
+}
 .section.reverse {
     flex-direction: row-reverse;
+}
+
+.section.reverse li {
+    list-style: none;
 }
 
 .section .text {
