@@ -235,6 +235,9 @@ body {
     margin: 0 auto;
     gap: 40px;
 }
+.section li {
+    list-style: none;
+}
 
 .section.reverse {
     flex-direction: row-reverse;
