@@ -696,7 +696,7 @@ footer .container {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background: linear-gradient(to right, #004080, #0066cc);
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -716,8 +716,10 @@ footer .container {
 .modal-content ul li {
     font-size: 1.2em;
     margin-bottom: 10px;
-    padding-left: 20px;
+    padding-left: 30px;
     position: relative;
+    color: white;
+    list-style: none;
 }
 
 .modal-content ul li::before {
@@ -726,10 +728,11 @@ footer .container {
     left: 0;
     color: #FF7F50;
     font-size: 1.2em;
+    list-style: none;
 }
 
 .close {
-    color: #aaa;
+    color: #ffffff;
     float: right;
     font-size: 28px;
     font-weight: bold;
