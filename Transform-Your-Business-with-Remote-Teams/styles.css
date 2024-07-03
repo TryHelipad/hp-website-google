@@ -641,7 +641,7 @@ footer .container {
 .lead-magnet-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .lead-magnet-form input {
