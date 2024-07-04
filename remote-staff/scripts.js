@@ -159,10 +159,22 @@ $(document).ready(function() {
     // Form submission handling
     $('form.lead-magnet-form').submit(function(event) {
         event.preventDefault(); // Prevent the default form submission
+
         var form = $(this);
 
-        // Display the thank you message
-        var thankYouMessage = $('<p class="thank-you-message">Thank you! Your Free Guide Is On Its Way To Your Inbox.</p>');
-        form.replaceWith(thankYouMessage);
+        // Send form data using AJAX
+        $.ajax({
+            url: form.attr('action'),
+            method: form.attr('method'),
+            data: form.serialize(),
+            success: function(response) {
+                form.find('.thank-you-message').show(); // Show the thank you message
+                form.find('input, button').hide(); // Hide the form inputs and submit button
+            },
+            error: function(error) {
+                console.error('Error submitting form:', error);
+                alert('There was an error submitting the form. Please try again.');
+            }
+        });
     });
 });
