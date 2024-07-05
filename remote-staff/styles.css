@@ -1058,13 +1058,15 @@ footer .container {
     }
 
     .hero .content {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: left;
         text-align: center;
+        display: flex;
     }
 
     .hero-text-container {
         width: 100%;
+        margin-top: 20px;
     }
 
     .hero-image {
