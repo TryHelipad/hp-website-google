@@ -315,7 +315,7 @@ body {
 }
 
 .answer-section h2 {
-    ont-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.5em;
     color: #333333;
     margin-bottom: 20px;
