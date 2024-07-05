@@ -773,15 +773,15 @@ footer .container {
 }
 
 .testimonial-box {
-    background-color: var(--white);
+    background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .testimonial-author-image {
@@ -789,6 +789,8 @@ footer .container {
     height: 80px;
     border-radius: 50%;
     margin-bottom: 10px;
+    justify-content: flex-start;
+    padding: 0 10px;
 }
 
 .testimonial-text {
@@ -802,7 +804,12 @@ footer .container {
 .testimonial-author {
     font-size: 14px;
     font-weight: 600;
-    color: var (--black);
+    color: black;
+    padding: 0 10px;
+}
+
+.subheading-hero {
+    color: white;
 }
 
 /* Responsive Styling */
