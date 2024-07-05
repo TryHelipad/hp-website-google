@@ -245,7 +245,7 @@ body {
 
 .section .text {
     flex: 1;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 .section .image {
@@ -315,10 +315,11 @@ body {
 }
 
 .answer-section h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5em; /* Match the font size with other headings */
-    color: #000000; /* Match the text color */
-    margin-bottom: 20px; /* Consistent spacing */
+    ont-family: 'Open Sans', sans-serif;
+    font-size: 1.5em;
+    color: #333333;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .answer-section p {
@@ -1077,7 +1078,7 @@ footer .container {
     .section {
         flex-direction: column;
         text-align: left;
-        padding: 40px 20px;
+        padding: 20px 20px;
     }
 
     .section.reverse {
