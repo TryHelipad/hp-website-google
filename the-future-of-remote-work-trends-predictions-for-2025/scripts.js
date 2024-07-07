@@ -19,6 +19,29 @@ $(document).ready(function() {
         }
     });
 
+    // Smooth scrolling for anchor links
+    $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 1000, function() {
+                    var $target = $(target);
+                    $target.focus();
+                    if ($target.is(":focus")) {
+                        return false;
+                    } else {
+                        $target.attr('tabindex', '-1');
+                        $target.focus();
+                    }
+                });
+            }
+        }
+    });
+
     // Modal functionality
     var modal = document.getElementById("leadMagnetModal");
     var span = document.getElementsByClassName("close")[0];
@@ -89,26 +112,4 @@ $(document).ready(function() {
             hideModal();
         }
     }
-
-    // Form submission handling
-    $('form').submit(function(event) {
-        event.preventDefault(); // Prevent default form submission
-
-        // Perform AJAX request to submit form data to Netlify
-        var formData = $(this).serialize();
-        var form = $(this);
-
-        $.ajax({
-            type: 'POST',
-            url: form.attr('action'),
-            data: formData,
-            success: function() {
-                form.find('.thank-you-message').show(); // Show thank you message
-                form.trigger('reset'); // Reset form fields
-            },
-            error: function() {
-                alert('There was an error submitting the form. Please try again.');
-            }
-        });
-    });
 });
