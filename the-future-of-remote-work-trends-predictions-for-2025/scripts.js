@@ -19,30 +19,7 @@ $(document).ready(function() {
         }
     });
 
-    // Smooth scrolling for anchor links
-    $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                event.preventDefault();
-                $('html, body').animate({
-                    scrollTop: target.offset().top
-                }, 1000, function() {
-                    var $target = $(target);
-                    $target.focus();
-                    if ($target.is(":focus")) {
-                        return false;
-                    } else {
-                        $target.attr('tabindex', '-1');
-                        $target.focus();
-                    }
-                });
-            }
-        }
-    });
-
-    // Exit intent detection for desktop
+    // Modal functionality
     var modal = document.getElementById("leadMagnetModal");
     var span = document.getElementsByClassName("close")[0];
     var lastTouchY = 0;
@@ -113,21 +90,24 @@ $(document).ready(function() {
         }
     }
 
-    // Handle form submissions without redirect
-    $('.lead-magnet-form').submit(function(event) {
+    // Form submission handling
+    $('form').submit(function(event) {
         event.preventDefault(); // Prevent default form submission
+
+        // Perform AJAX request to submit form data to Netlify
+        var formData = $(this).serialize();
         var form = $(this);
 
         $.ajax({
             type: 'POST',
-            url: $(this).attr('action'),
-            data: $(this).serialize(),
+            url: form.attr('action'),
+            data: formData,
             success: function() {
-                form.find('.thank-you-message').show();
-                form.find('input, button').hide();
+                form.find('.thank-you-message').show(); // Show thank you message
+                form.trigger('reset'); // Reset form fields
             },
             error: function() {
-                alert('There was an error submitting your form. Please try again.');
+                alert('There was an error submitting the form. Please try again.');
             }
         });
     });

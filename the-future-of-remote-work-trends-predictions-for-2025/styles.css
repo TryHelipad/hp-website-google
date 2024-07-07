@@ -39,7 +39,7 @@ body {
 }
 
 .logo img {
-    height: 40px;
+    height: 20px;
 }
 
 .navigation ul {
@@ -154,6 +154,46 @@ body {
     padding: 12px 16px; /* Adjust padding for better appearance */
 }
 
+/* Blog Post Styling */
+.blog-post {
+    padding: 80px 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-post h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #003366;
+}
+
+.blog-post p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.blog-post h2 {
+    font-size: 2em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #003366;
+}
+
+.blog-post h3 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #004080;
+}
+
+.blog-post em {
+    color: #666666;
+}
+
 /* Footer Styling */
 footer {
     background: linear-gradient(to right, #004080, #0066cc); /* Adjust to match other sections */
@@ -252,25 +292,23 @@ footer .container {
         display: flex;
     }
 
-    .mobile-nav {
-        display: block;
-        transform: translateX(100%);
-    }
-
     .mobile-nav.active {
         transform: translateX(0);
     }
 
-    .footer-columns {
-        flex-direction: column;
-        text-align: center;
+    .blog-post {
+        padding: 60px 20px 30px;
     }
 
-    .footer-column {
-        margin-bottom: 20px;
+    .blog-post h1 {
+        font-size: 2em;
     }
 
-    .footer-bottom {
-        padding-top: 10px;
+    .blog-post h2 {
+        font-size: 1.5em;
+    }
+
+    .blog-post h3 {
+        font-size: 1.2em;
     }
 }
