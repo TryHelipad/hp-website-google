@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Top Talent | Helipad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="landing-page">
+
+<!-- Header Section -->
+<header>
+    <div class="container">
+        <img src="resources/Helipad_logo_white_svg.svg" alt="Helipad Logo" class="logo">
+        <button class="cta-button" onclick="document.getElementById('benefits-section').scrollIntoView({ behavior: 'smooth' });">Get Started</button>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Find Elite Virtual Assistants in <span class="highlighted-text">48 Hours</span></h1>
+            <p>Skip the endless hiring process. 
+                In just two days, we'll deliver <span class="highlighted-text"> 3 premium, pre-vetted CVs to your inbox for FREE.</span> One of them might be the key to unlocking your company's potential. 
+                Want to find out?
+            </p>
+            <button class="cta-button" onclick="document.getElementById('form-cv-section').scrollIntoView({ behavior: 'smooth' });">Get Your 3 Handpicked CVs Now</button>
+            <div class="social-proof">
+                <span class="businesses-helped">2538 businesses helped</span>
+                <span class="guarantee">180-day money-back guarantee</span>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="resources/header-image.png" alt="Professional remote talent">
+            <div class="testimonial">
+                <img src="resources/customer-testimonial.png" alt="Happy customer" class="testimonial-image">
+                <blockquote>"We have saved over $655,789 in costs just this year by using Helipad. And grown by 2.4x."</blockquote>
+                <cite>- Jon H.</cite>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pain-points">
+    <h2>Finding top talent shouldn't be a struggle</h2>
+    <div class="container">
+        <div class="pain-points-content">
+            <p>Dear ambitious entrepreneur,<br></br>
+                We get it. You're drowning in a sea of tasks, desperately trying to keep your business afloat.
+                You've probably thought, 'How great would it be to have a Virtual Assistant handle all this?'<br></br>
+                But where do you even start? How do you find someone trustworthy? What if it doesn't work out?
+                Well, what if we told you that you could try a top-notch VA for free?<br></br>
+                No strings attached. No hidden fees. Just pure, unadulterated productivity boost.
+                In just 48 hours, we'll match you with a pre-vetted, highly skilled VA who fits your business like a glove.<br></br>
+                Imagine slashing your workload, reclaiming your time, and actually focusing on growing your business.
+                All without risking a dime.<br></br>
+                Sounds too good to be true? We thought so too, until we built it.
+                So, are you ready to transform your business and reclaim your sanity?<br></br>
+                Your free trial is just a click away. Let's make magic happen.</p>
+        </div>
+        <div class="pain-points-image">
+            <img src="resources/hiring-illustration.png" alt="Hiring process illustration">
+        </div>
+    </div>
+</section>
+
+<!-- Video Testimonials Section -->
+<section class="video-testimonials">
+    <div class="container">
+        <h2>Real Success Stories from Our Clients</h2>
+        <p>Watch how 2538 business owners have slashed costs by 82.7% and grown their businesses by an average of 2.3x by hiring virtual talent.</p>
+        <div class="video-showcase">
+            <div class="video-display">
+                <div class="video-thumbnail">
+                    <img src="resources/thumbnail1.png" alt="Client 1 Testimonial">
+                    <div class="overlay">
+                        <p id="success-snippet">"Saved $100,000 in our first year with Helipad!"</p>
+                        <button class="play-btn">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="video-carousel-container">
+                <button class="carousel-button prev">&lt;</button>
+                <div class="video-carousel">
+                    <div class="video-grid">
+                        <div class="video-item" data-video="resources/video1.mp4" data-thumbnail="resources/thumbnail1.png" data-snippet="Saved $100,000 in our first year with Helipad!" data-author="John Smith, CEO of TechStart">
+                            <img src="resources/thumbnail1.png" alt="Client 1">
+                            <p id="video-author">Carolina, Nutritionist</p>
+                        </div>
+                        <div class="video-item" data-video="resources/video2.mp4" data-thumbnail="resources/thumbnail2.png" data-snippet="Increased productivity by 40% using Helipad VAs" data-author="John Smith, CEO of TechStart">
+                            <img src="resources/thumbnail2.png" alt="Client 2">
+                            <p id="video-author">Amy, Content Creator</p>
+                        </div>
+                        <div class="video-item" data-video="resources/video3.mp4" data-thumbnail="resources/thumbnail3.png" data-snippet="Scaled our business 3x faster with Helipad's support" data-author="John Smith, CEO of TechStart">
+                            <img src="resources/thumbnail3.png" alt="Client 3">
+                            <p id="video-author">Gary, Construction Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-button next">&gt;</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefit Cards Section -->
+<section class="benefit-cards" id="benefits-section">
+    <div class="container">
+        <h2>How Helipad Transforms Your Business</h2>
+        <div class="cards-container">
+            <div class="benefit-card">
+                <img src="resources/cost-savings-icon.svg" alt="Cost Savings Icon">
+                <h3>Slash Costs</h3>
+                <p>Save up to 80% on staffing costs without compromising on quality.</p>
+            </div>
+            <div class="benefit-card">
+                <img src="resources/productivity-icon.svg" alt="Productivity Icon">
+                <h3>Boost Productivity</h3>
+                <p>Get more done with highly skilled virtual assistants working round the clock.</p>
+            </div>
+            <div class="benefit-card">
+                <img src="resources/scalability-icon.svg" alt="Scalability Icon">
+                <h3>Scale Faster</h3>
+                <p>Quickly adapt to market demands by scaling your team up or down as needed.</p>
+            </div>
+        </div>
+        <div class="cta-button-wrapper">
+            <button class="cta-button" onclick="document.getElementById('form-cv-section').scrollIntoView({ behavior: 'smooth' });">Get Your 3 Handpicked CVs Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- Customer Problems Section -->
+<section class="customer-problems">
+    <div class="container">
+        <h2>We solve these 4 staffing challenges.</h2>
+        <div class="content">
+            <div class="problems-list">
+                <div class="problem active" data-problem="1">
+                    <div class="problem-number">
+                        <p>1</p>
+                    </div>
+                    <div class="problem-text">
+                        <h3>You're overpaying for talent, hurting your bottom line</h3>
+                        <p>Stop paying $50+ per hour for local staff. Our virtual assistants deliver the same quality work for as low as $4/hour. 
+                            Imagine reinvesting those savings into growing your business.</p>
+                    </div>
+                </div>
+                <div class="problem" data-problem="2">
+                    <div class="problem-number">
+                        <p>2</p>
+                    </div>
+                    <div class="problem-text">
+                        <h3>Can't find the right skills in your local talent pool?</h3>
+                        <p>Why limit yourself? Tap into our global network of pre-vetted professionals. 
+                            Whether you need a marketing whiz or a tech guru, we'll match you with top-tier talent that fits your exact needs.</p>
+                    </div>
+                </div>
+                <div class="problem" data-problem="3">
+                    <div class="problem-number">
+                        <p>3</p>
+                    </div>
+                    <div class="problem-text">
+                        <h3>Worried about managing a remote team?</h3>
+                        <p>Don't let fear hold you back. Our turnkey management system ensures your virtual staff integrates seamlessly. 
+                            You get all the benefits of a global team without the headaches.</p>
+                    </div>
+                </div>
+                <div class="problem" data-problem="4">
+                    <div class="problem-number">
+                       <p>4</p>
+                    </div>
+                    <div class="problem-text">
+                        <h3>Is slow hiring preventing you from scaling quickly?
+                        </h3>
+                        <p>Traditional hiring can take months. With Helipad, you can have skilled professionals working for you in as little as 48 hours. 
+                            Scale up or down instantly to meet market demands.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="problem-image">
+                <img src="resources/high-costs.png" alt="High Staffing Costs" class="active" data-problem="1">
+                <img src="resources/skill-gap.png" alt="Difficulty Finding Skilled Workers" data-problem="2">
+                <img src="resources/remote-teams.png" alt="Managing Remote Teams" data-problem="3">
+                <img src="resources/scalability.png" alt="Scalability Issues" data-problem="4">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="process-section">
+    <div class="container">
+        <h2>Our process is fast, friendly, and simple</h2>
+        <div class="process-steps">
+            <div class="step">
+                <p class="step-description">Receive your CVs in</p>
+                <p class="step-time">48 hours</p>
+            </div>
+            <img src="resources/right-arrow.svg" class="arrow" alt="Arrow right">
+            <img src="resources/arrow-mobile.svg" class="arrow-mobile" alt="Arrow right">
+            <div class="step">
+                <p class="step-description">Decide within</p>
+                <p class="step-time">7 days</p>
+            </div>
+            <img src="resources/left-arrow.svg" class="arrow" alt="Arrow left">
+            <img src="resources/arrow-mobile2.svg" class="arrow-mobile" alt="Arrow right">
+            <div class="step final-step">
+                <div class="step-content">
+                    <p class="step-description">Start working in</p>
+                    <p class="step-time">1 week</p>
+                </div>
+            </div>
+        </div>
+        <div class="process-benefits">
+            <p>✓ Thorough vetting process focused on finding the best handpicked talent</p>
+            <p>✓ No long-term contracts — scale up or down as needed</p>
+            <p>✓ Straightforward monthly payments</p>
+            <p>✓ No complex onboarding — we handle everything</p>
+        </div>
+        <div class="cta-button-wrapper">
+            <button class="cta-button" onclick="document.getElementById('form-cv-section').scrollIntoView({ behavior: 'smooth' });">Get Your 3 Handpicked CVs Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- Form and CV Showcase Section -->
+<section class="form-cv-section" id="form-cv-section">
+    <div class="container">
+        <h2>Get Your 3 Handpicked CVs Now</h2>
+        <p class="section-description">Skip the endless hiring process. In just two days, we'll deliver 3 premium, pre-vetted CVs to your inbox. One of them might be the key to unlocking your company's potential. Are you ready to meet your next superstar employee?</p>
+        <div class="form-cv-wrapper">
+            <div class="form-container">
+                <form id="cv-request-form">
+                    <div class="form-step active" data-step="1">
+                        <h3>Step 1: Job Requirements</h3>
+                        <select name="role" required>
+                            <option value="AI Consultant">AI Consultant</option>
+                            <option value="AI Developer">AI Developer</option>
+                            <option value="AI Business Analyst">AI Business Analyst</option>
+                            <option value="Real Estate Contracts Administration">Real Estate Contracts Administration</option>
+                            <option value="Real Estate Administration Support">Real Estate Administration Support</option>
+                            <option value="Real Estate Lead Generation Specialist">Real Estate Lead Generation Specialist</option>
+                            <option value="Digital Marketer">Digital Marketer</option>
+                            <option value="Social Media Specialist">Social Media Specialist</option>
+                            <option value="Social Media Manager">Social Media Manager</option>
+                            <option value="Video Editor">Video Editor</option>
+                            <option value="Copywriter">Copywriter</option>
+                            <option value="Product Catalog Specialist">Product Catalog Specialist</option>
+                            <option value="Operations Manager">Operations Manager</option>
+                            <option value="Teleconsultant (Medical)">Teleconsultant (Medical)</option>
+                            <option value="Loan Processor">Loan Processor</option>
+                            <option value="Collections Officer">Collections Officer</option>
+                            <option value="Bid Manager">Bid Manager</option>
+                            <option value=".Net Developer">.Net Developer</option>
+                            <option value="Software engineer">Software engineer</option>
+                            <option value="Applications Developer">Applications Developer</option>
+                            <option value="Backend Developer">Backend Developer</option>
+                            <option value="Front End Developer">Front End Developer</option>
+                            <option value="Full Stack Developer">Full Stack Developer</option>
+                            <option value="Medical Transcription">Medical Transcription</option>
+                            <option value="Medical Receptionist">Medical Receptionist</option>
+                            <option value="Medical Billing">Medical Billing</option>
+                            <option value="Property Management Assistant">Property Management Assistant</option>
+                            <option value="Engineer">Engineer</option>
+                            <option value="Architect">Architect</option>
+                            <option value="CAD Designer">CAD Designer</option>
+                            <option value="Draftsperson">Draftsperson</option>
+                            <option value="HR Compensation and Benefits Specialist">HR Compensation and Benefits Specialist</option>
+                            <option value="HR Manager">HR Manager</option>
+                            <option value="HR Associate">HR Associate</option>
+                            <option value="Recruiter">Recruiter</option>
+                            <option value="Marketing Assistant">Marketing Assistant</option>
+                            <option value="SEO Specialist">SEO Specialist</option>
+                            <option value="Google Adds (PPC)">Google Adds (PPC)</option>
+                            <option value="Graphic Designer">Graphic Designer</option>
+                            <option value="Web Developer">Web Developer</option>
+                            <option value="Business Analyst">Business Analyst</option>
+                            <option value="Data Analyst">Data Analyst</option>
+                            <option value="Accountant">Accountant</option>
+                            <option value="Bookkeeper">Bookkeeper</option>
+                            <option value="Sales Lead Generation">Sales Lead Generation</option>
+                            <option value="Sales Support Admin">Sales Support Admin</option>
+                            <option value="Sales Specialist (B2B)">Sales Specialist (B2B)</option>
+                            <option value="IT Support (Level 2)">IT Support (Level 2)</option>
+                            <option value="IT Support (Level 1)">IT Support (Level 1)</option>
+                            <option value="Customer Support – Non- Voice">Customer Support – Non- Voice</option>
+                            <option value="Data Entry Specialist">Data Entry Specialist</option>
+                            <option value="E-Commerce Assistant">E-Commerce Assistant</option>
+                            <option value="Executive Assistant">Executive Assistant</option>
+                            <option value="Customer Support – Voice">Customer Support – Voice</option>
+                            <option value="Virtual Assistant – Non Voice">Virtual Assistant – Non Voice</option>
+                        </select>
+                        <select name="industry" required>
+                            <option value="">Select Your Industry</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Real Estate">Real Estate</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Education">Education</option>
+                            <option value="E-commerce">E-commerce</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <select name="experience" required>
+                            <option value="">Select Experience Level</option>
+                            <option value="Entry Level">Entry Level (0-2 years)</option>
+                            <option value="Mid Level">Mid Level (3-5 years)</option>
+                            <option value="Senior Level">Senior Level (6+ years)</option>
+                        </select>
+                        <button type="button" class="next-step">Next</button>
+                    </div>
+                    <div class="form-step" data-step="2">
+                        <h3>Step 2: Your Details</h3>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="tel" name="phone" placeholder="Your Phone Number">
+                        <input type="text" name="company" placeholder="Company Name">
+                        <textarea name="additional_info" placeholder="Any additional requirements?"></textarea>
+                        <div class="form-buttons">
+                            <button type="button" class="prev-step">Previous</button>
+                            <button type="submit" class="cta-button">Get My 3 CVs</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="progress-indicator">
+                    <div class="step-item">
+                        <div class="step active" data-step="1"></div>
+                        <p class="step-label">Job Details</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step" data-step="2"></div>
+                        <p class="step-label">Your Info</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cv-showcase">
+                <img src="resources/cv-showcase.png" alt="Sample CVs" class="cv-stack-image">
+                <p>These are just samples. Your CVs will be tailored to your needs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq-section">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-columns">
+            <div class="faq-column">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can Virtual Staff Work For My Business?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Any role that can be done from a desk can be outsourced to equally capable team members overseas.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What If I don't like the candidate that you send me?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>If the CVs that we send you don't fit your need, we will find you more for free. If you end up hiring a staff member through us and they don't work out
+                            , we provide a 180 day guarantee to ensure they are swiftly replaced for a better suited candidate.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is my remote hire dedicated for me?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. Unlike other outsourcing services we find you people that are looking for full time work.
+                            We add another layer of safety by binding your employee with local laws to ensure they follow processes just as a local hire would.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-column">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How much does it cost?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The cost of remote employees starts at $4/hr but it can vary based on level of experience and the job requirement. However, at a minimum you are guaranteed
+                            to save 50%. </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do I have to provide anything for my remote hire?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. All remote employees that we recruit have a minimum requirement of capable technology, work space and internet connection.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How quickly can I hire someone?</h3>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our process is very quick. You can have a new team member working on your projects within a week.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video Modal -->
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <video id="videoPlayer" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+<!-- External JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
