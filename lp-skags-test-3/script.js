@@ -206,7 +206,7 @@ const prevButtons = form.querySelectorAll('.prev-step');
             console.log('Response received', response);
             if (response.ok) {
                 console.log('Form submitted successfully');
-                window.location.href = 'lp-skags-test-3/thank-you.html';
+                window.location.href = '/thank-you.html';
             } else {
                 throw new Error('Form submission failed');
             }
