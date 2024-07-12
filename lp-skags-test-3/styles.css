@@ -1102,6 +1102,12 @@ select:focus {
         flex-direction: column;
     }
 
+    .pain-points-image img {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+    }
+
     /* Responsive adjustments for select boxes */
     select {
         height: 44px; /* Slightly taller on mobile */
