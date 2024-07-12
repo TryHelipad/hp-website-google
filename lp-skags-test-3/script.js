@@ -190,63 +190,87 @@ function updateProgressIndicator(step) {
 }
 
 // New code for multi-step form
-const form = document.getElementById('cv-request-form');
-const steps = form.querySelectorAll('.form-step');
-const progressSteps = document.querySelectorAll('.progress-indicator .step');
-const nextButtons = form.querySelectorAll('.next-step');
-const prevButtons = form.querySelectorAll('.prev-step');
+    const form = document.getElementById('cv-request-form');
+    const steps = form.querySelectorAll('.form-step');
+    const progressSteps = document.querySelectorAll('.progress-indicator .step');
+    const nextButtons = form.querySelectorAll('.next-step');
+    const prevButtons = form.querySelectorAll('.prev-step');
 
-nextButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const currentStep = button.closest('.form-step');
-        const nextStep = currentStep.nextElementSibling;
-        if (validateStep(currentStep)) {
+    nextButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const currentStep = button.closest('.form-step');
+            const nextStep = currentStep.nextElementSibling;
+            if (validateStep(currentStep)) {
+                currentStep.classList.remove('active');
+                nextStep.classList.add('active');
+                updateProgressIndicator(nextStep.dataset.step);
+            }
+        });
+    });
+
+    prevButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const currentStep = button.closest('.form-step');
+            const prevStep = currentStep.previousElementSibling;
             currentStep.classList.remove('active');
-            nextStep.classList.add('active');
-            updateProgressIndicator(nextStep.dataset.step);
-        }
+            prevStep.classList.add('active');
+            updateProgressIndicator(prevStep.dataset.step);
+        });
     });
-});
 
-prevButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const currentStep = button.closest('.form-step');
-        const prevStep = currentStep.previousElementSibling;
-        currentStep.classList.remove('active');
-        prevStep.classList.add('active');
-        updateProgressIndicator(prevStep.dataset.step);
-    });
-});
-
-function validateStep(step) {
-    const inputs = step.querySelectorAll('input[required], select[required]');
-    let isValid = true;
-    inputs.forEach(input => {
-        if (!input.value) {
-            isValid = false;
-            input.classList.add('error');
-        } else {
-            input.classList.remove('error');
-        }
-    });
-    return isValid;
-}
-
-function updateProgressIndicator(step) {
-    progressSteps.forEach(stepIndicator => {
-        const stepItem = stepIndicator.closest('.step-item');
-        if (stepIndicator.dataset.step <= step) {
-            stepIndicator.classList.add('active');
-            stepItem.querySelector('.step-label').style.color = '#004080';
-        } else {
-            stepIndicator.classList.remove('active');
-            stepItem.querySelector('.step-label').style.color = '#666';
-        }
-    });
-}
-
-form.addEventListener('submit', function(e) {
-    if (!validateStep(steps[steps.length - 1])) {
-        e.preventDefault();
+    function validateStep(step) {
+        const inputs = step.querySelectorAll('input[required], select[required]');
+        let isValid = true;
+        inputs.forEach(input => {
+            if (!input.value) {
+                isValid = false;
+                input.classList.add('error');
+            } else {
+                input.classList.remove('error');
+            }
+        });
+        return isValid;
     }
+
+    function updateProgressIndicator(step) {
+        progressSteps.forEach(stepIndicator => {
+            const stepItem = stepIndicator.closest('.step-item');
+            if (stepIndicator.dataset.step <= step) {
+                stepIndicator.classList.add('active');
+                stepItem.querySelector('.step-label').style.color = '#004080';
+            } else {
+                stepIndicator.classList.remove('active');
+                stepItem.querySelector('.step-label').style.color = '#666';
+            }
+        });
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (validateStep(steps[steps.length - 1])) {
+            // Collect form data
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Send form data via Ajax
+            fetch(form.action, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(data).toString()
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = '/thank-you.html';
+                } else {
+                    alert('There was a problem with the submission.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    });
 });
