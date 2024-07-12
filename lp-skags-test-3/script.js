@@ -191,8 +191,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     form.addEventListener('submit', function(e) {
     if (validateStep(steps[steps.length - 1])) {
+        // Allow the form to submit naturally
+    } else {
         e.preventDefault();
-        form.submit();
     }
 });
 });
