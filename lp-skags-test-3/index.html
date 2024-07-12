@@ -245,11 +245,14 @@
         <p class="section-description">Skip the endless hiring process. In just two days, we'll deliver 3 premium, pre-vetted CVs to your inbox. One of them might be the key to unlocking your company's potential. Are you ready to meet your next superstar employee?</p>
         <div class="form-cv-wrapper">
             <div class="form-container">
-                <form id="cv-request-form" name="cv-request-form" method="POST" data-netlify="true" netlify>
-                    <input type="hidden" name="form-name" value="cv-request-form">
-                    <div class="form-step active" data-step="1">
-                        <h3>Step 1: Job Requirements</h3>
-                        <select name="role" required>
+                <form id="cv-request-form" name="cv-request-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="cv-request-form">
+    <p class="hidden">
+        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+    </p>
+    <div class="form-step active" data-step="1">
+        <h3>Step 1: Job Requirements</h3>
+        <select name="role" required>
                             <option value="AI Consultant">AI Consultant</option>
                             <option value="AI Developer">AI Developer</option>
                             <option value="AI Business Analyst">AI Business Analyst</option>
@@ -306,7 +309,7 @@
                             <option value="Customer Support – Voice">Customer Support – Voice</option>
                             <option value="Virtual Assistant – Non Voice">Virtual Assistant – Non Voice</option>
                         </select>
-                        <select name="industry" required>
+        <select name="industry" required>
                             <option value="">Select Your Industry</option>
                             <option value="Technology">Technology</option>
                             <option value="Real Estate">Real Estate</option>
@@ -316,27 +319,27 @@
                             <option value="E-commerce">E-commerce</option>
                             <option value="Other">Other</option>
                         </select>
-                        <select name="experience" required>
+        <select name="experience" required>
                             <option value="">Select Experience Level</option>
                             <option value="Entry Level">Entry Level (0-2 years)</option>
                             <option value="Mid Level">Mid Level (3-5 years)</option>
                             <option value="Senior Level">Senior Level (6+ years)</option>
                         </select>
-                        <button type="button" class="next-step">Next</button>
-                    </div>
-                    <div class="form-step" data-step="2">
-                        <h3>Step 2: Your Details</h3>
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <input type="tel" name="phone" placeholder="Your Phone Number">
-                        <input type="text" name="company" placeholder="Company Name">
-                        <textarea name="additional_info" placeholder="Any additional requirements?"></textarea>
-                        <div class="form-buttons">
-                            <button type="button" class="prev-step">Previous</button>
-                            <button type="submit" class="cta-button">Get My 3 CVs</button>
-                        </div>
-                    </div>
-                </form>
+        <button type="button" class="next-step">Next</button>
+    </div>
+    <div class="form-step" data-step="2">
+        <h3>Step 2: Your Details</h3>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Your Phone Number">
+        <input type="text" name="company" placeholder="Company Name">
+        <textarea name="additional_info" placeholder="Any additional requirements?"></textarea>
+        <div class="form-buttons">
+            <button type="button" class="prev-step">Previous</button>
+            <button type="submit" class="cta-button">Get My 3 CVs</button>
+        </div>
+    </div>
+</form>
                 <div class="progress-indicator">
                     <div class="step-item">
                         <div class="step active" data-step="1"></div>
