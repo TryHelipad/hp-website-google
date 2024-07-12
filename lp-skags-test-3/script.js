@@ -190,8 +190,33 @@ const prevButtons = form.querySelectorAll('.prev-step');
     }
 
     form.addEventListener('submit', function(e) {
-    if (!validateStep(steps[steps.length - 1])) {
-        e.preventDefault();
+    e.preventDefault();
+    console.log('Form submission attempted');
+
+    if (validateStep(steps[steps.length - 1])) {
+        console.log('Form validation passed, preparing to submit');
+        
+        const formData = new FormData(form);
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(response => {
+            console.log('Response received', response);
+            if (response.ok) {
+                console.log('Form submitted successfully');
+                window.location.href = '/thank-you.html';
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was a problem with the submission. Please try again.');
+        });
+    } else {
+        console.log('Form validation failed');
     }
 });
 });
