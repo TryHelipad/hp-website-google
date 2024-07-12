@@ -67,6 +67,7 @@ h1 {
     margin-bottom: 30px;
 }
 
+/* CTA Button styles */
 .cta-button {
     background-color: #FF7F50;
     color: white;
@@ -91,6 +92,7 @@ h1 {
     margin-top: 30px;
 }
 
+/* Social proof styles */
 .social-proof {
     margin-top: 20px;
     display: flex;
@@ -122,6 +124,7 @@ h1 {
     background-image: url('resources/high-quality.svg');
 }
 
+/* Hero image styles */
 .hero-image {
     flex: 1;
     position: relative;
@@ -183,6 +186,7 @@ h1 {
     margin-right: auto;
 }
 
+/* Video showcase styles */
 .video-showcase {
     max-width: 1200px;
     margin: 0 auto;
@@ -202,7 +206,7 @@ h1 {
 .video-thumbnail {
     position: relative;
     width: 100%;
-    padding-top: 100%; /* This makes it square */
+    padding-top: 100%;
     background: #000;
     overflow: hidden;
 }
@@ -270,7 +274,7 @@ h1 {
     fill: white;
 }
 
-/* Video grid and carousel */
+/* Video grid and carousel styles */
 .video-carousel-container {
     position: relative;
     max-width: 100%;
@@ -342,7 +346,7 @@ h1 {
     display: none;
 }
 
-/* Benefit cards section */
+/* Benefit cards section styles */
 .benefit-cards {
     background: linear-gradient(to right, #004080, #0066cc);
     padding: 80px 0;
@@ -394,7 +398,7 @@ h1 {
     color: #ffffff;
 }
 
-/* Customer Problems Section */
+/* Customer Problems Section styles */
 .customer-problems {
     padding: 80px 0;
     background-color: #fff;
@@ -501,7 +505,7 @@ h1 {
     opacity: 1;
 }
 
-/* Process Section */
+/* Process Section styles */
 .process-section {
     background: linear-gradient(to right, #004080, #0066cc);
     color: #fff;
@@ -584,7 +588,7 @@ h1 {
     z-index: 1;
 }
 
-/* Form and CV Showcase Section */
+/* Form and CV Showcase Section styles */
 .form-cv-section {
     padding: 80px 0;
     background-color: #f5f5f5;
@@ -738,6 +742,7 @@ h1 {
     background-color: #002f60;
 }
 
+/* Form input styles */
 #cv-request-form select,
 #cv-request-form input,
 #cv-request-form textarea {
@@ -746,7 +751,7 @@ h1 {
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
 }
 
 #cv-request-form h3 {
@@ -754,81 +759,55 @@ h1 {
     color: #004080;
 }
 
-.cta-button {
-    background-color: #FF7F50;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.1em;
-    padding: 12px 24px;
-    border: none;
+/* Consistent styling for select boxes */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #ff6a3c;
-    transform: scale(1.05);
-}
-
-.pain-points {
-    background-color: #f8f9fa;
-    padding: 80px 0;
-}
-
-.pain-points h2 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
-    color: #004080;
-}
-
-.pain-points .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
-}
-
-.pain-points-content {
-    flex: 1;
-}
-
-.pain-points-content p {
-    color: #666;
-    margin-bottom: 20px;
-    font-size: 1.1em;
-}
-
-.solution-statement {
-    font-size: 1.1em;
-    font-weight: bold;
+    padding: 10px 30px 10px 10px;
+    font-size: 16px;
     color: #333;
-    margin: 30px 0;
+    width: 100%;
+    height: 40px;
+    line-height: 1.3;
 }
 
-.pain-points-image {
-    flex: 1;
+/* Add a custom dropdown arrow */
+select {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    padding-right: 30px;
 }
 
-.pain-points-image img {
-    max-width: 100%;
-    height: auto;
+/* Styling for iOS devices */
+@supports (-webkit-touch-callout: none) {
+    select {
+        font-size: 16px !important;
+        line-height: 1.3 !important;
+    }
+}
+
+/* Remove default styling on iOS */
+select::-ms-expand {
+    display: none;
+}
+
+/* Focus state */
+select:focus {
+    outline: none;
+    border-color: #004080;
+    box-shadow: 0 0 0 2px rgba(0, 64, 128, 0.2);
 }
 
 /* FAQ Section Styling */
 .faq-section {
     padding: 60px 20px;
-    background: linear-gradient(to right, #004080, #0066cc);;
+    background: linear-gradient(to right, #004080, #0066cc);
     text-align: center;
 }
 
@@ -937,6 +916,7 @@ h1 {
     font-weight: bold;
     cursor: pointer;
 }
+
 .close:hover,
 .close:focus {
     color: #fff;
@@ -1120,5 +1100,22 @@ h1 {
 
     .faq-columns {
         flex-direction: column;
+    }
+
+    /* Responsive adjustments for select boxes */
+    select {
+        height: 44px; /* Slightly taller on mobile */
+    }
+}
+
+/* Ensure consistent styling on iOS devices */
+@media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+        select {
+            -webkit-appearance: none;
+            background-color: #fff !important;
+            color: #333 !important;
+            font-size: 16px !important;
+        }
     }
 }
