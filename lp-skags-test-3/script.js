@@ -190,28 +190,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Ajax form submission
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        if (validateStep(steps[steps.length - 1])) {
-            const formData = new FormData(form);
-
-            fetch('/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(response => {
-                if (response.ok) {
-                    window.location.href = '/thank-you.html';
-                } else {
-                    alert('There was a problem with the submission.');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-    });
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (validateStep(steps[steps.length - 1])) {
+        const formData = new FormData(form);
+        fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = '/thank-you.html';
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was a problem with the submission. Please try again.');
+        });
+    }
+});
 });
