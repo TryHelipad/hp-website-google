@@ -888,14 +888,57 @@ select:focus {
     transform: rotate(45deg);
 }
 
+.pain-points {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
 .pain-points h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
     text-align: center;
     margin-bottom: 20px;
-    margin-top: 20px;
-    padding: 0, 20px;
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5em;
     color: #004080;
+}
+
+.pain-points .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.pain-points-content {
+    flex: 1;
+}
+
+.pain-points-content p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.solution-statement {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin: 30px 0;
+}
+
+.pain-points-image {
+    flex: 1;
+}
+
+.pain-points-image img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Modal styles */
