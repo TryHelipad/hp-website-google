@@ -245,7 +245,8 @@
         <p class="section-description">Skip the endless hiring process. In just two days, we'll deliver 3 premium, pre-vetted CVs to your inbox. One of them might be the key to unlocking your company's potential. Are you ready to meet your next superstar employee?</p>
         <div class="form-cv-wrapper">
             <div class="form-container">
-                <form id="cv-request-form" method="POST" data-netlify="true">
+                <form id="cv-request-form" name="cv-request-form" method="POST" data-netlify="true" action="/thank-you">
+                    <input type="hidden" name="form-name" value="cv-request-form">
                     <div class="form-step active" data-step="1">
                         <h3>Step 1: Job Requirements</h3>
                         <select name="role" required>
