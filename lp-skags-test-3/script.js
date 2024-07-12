@@ -135,10 +135,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Multi-step form logic
     const form = document.getElementById('cv-request-form');
-    const steps = form.querySelectorAll('.form-step');
-    const progressSteps = document.querySelectorAll('.progress-indicator .step');
-    const nextButtons = form.querySelectorAll('.next-step');
-    const prevButtons = form.querySelectorAll('.prev-step');
+const steps = form.querySelectorAll('.form-step');
+const progressSteps = document.querySelectorAll('.progress-indicator .step');
+const nextButtons = form.querySelectorAll('.next-step');
+const prevButtons = form.querySelectorAll('.prev-step');
 
     nextButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -189,27 +189,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Ajax form submission
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    if (validateStep(steps[steps.length - 1])) {
-        const formData = new FormData(form);
-        fetch('/', {
-            method: 'POST',
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
-        })
-        .then(response => {
-            if (response.ok) {
-                window.location.href = '/thank-you.html';
-            } else {
-                throw new Error('Form submission failed');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('There was a problem with the submission. Please try again.');
-        });
+    form.addEventListener('submit', function(e) {
+    if (!validateStep(steps[steps.length - 1])) {
+        e.preventDefault();
     }
 });
 });
