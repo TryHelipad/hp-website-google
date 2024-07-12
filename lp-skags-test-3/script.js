@@ -190,11 +190,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     form.addEventListener('submit', function(e) {
+    if (validateStep(steps[steps.length - 1])) {
         e.preventDefault();
-        if (validateStep(steps[steps.length - 1])) {
-            // Here you would typically send the form data to your server
-            // After successful submission:
-            window.location.href = 'thank-you.html';
-        }
-    });
+        form.submit();
+    }
+});
 });
