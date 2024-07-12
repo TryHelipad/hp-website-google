@@ -189,7 +189,7 @@ function updateProgressIndicator(step) {
     });
 }
 
-// New code for multi-step form
+// Multi-step form logic
     const form = document.getElementById('cv-request-form');
     const steps = form.querySelectorAll('.form-step');
     const progressSteps = document.querySelectorAll('.progress-indicator .step');
@@ -245,21 +245,18 @@ function updateProgressIndicator(step) {
         });
     }
 
+    // Ajax form submission
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         if (validateStep(steps[steps.length - 1])) {
-            // Collect form data
             const formData = new FormData(form);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
 
-            // Send form data via Ajax
-            fetch(form.action, {
+            fetch('/', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(data).toString()
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(formData).toString()
             })
             .then(response => {
                 if (response.ok) {
