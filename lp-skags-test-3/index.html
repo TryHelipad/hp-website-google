@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="styles.min.css">
     <link rel="icon" href="../resources/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="../resources/favicon.png" type="image/x-icon">
+    <link rel="preload" href="resources/Helipad_logo_white_svg.svg" as="image">
+    <link rel="preload" href="resources/header-image.webp" as="image">
+    <link rel="preload" href="resources/customer-testimonial.webp" as="image">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Open Sans',sans-serif;line-height:1.6;color:#333;background-color:#f5f5f5}.container{max-width:1200px;margin:0 auto;padding:0 20px}header{background-color:#003366;padding:20px 0;position:fixed;width:100%;z-index:1000}header .container{display:flex;justify-content:space-between;align-items:center}.logo{height:30px}.hero{background:linear-gradient(to right,#004080,#0066cc);padding:120px 0 80px;position:relative;color:#fff}.hero .container{display:flex;align-items:center;gap:40px}.hero-content{flex:1}h1{font-family:'Poppins',sans-serif;font-size:3em;color:#fff;margin-bottom:20px}.hero p{font-size:1.2em;margin-bottom:30px}.cta-button{background-color:#FF7F50;color:white;font-family:'Poppins',sans-serif;font-weight:600;font-size:1.1em;padding:12px 24px;border:none;border-radius:5px;cursor:pointer;transition:background-color .3s ease,transform .3s ease}.cta-button:hover{background-color:#ff6a3c;transform:scale(1.05)}.cta-button-wrapper{display:flex;justify-content:center;margin-top:30px}.social-proof{margin-top:20px;display:flex;gap:20px}.businesses-helped,.guarantee{font-weight:600;color:#fff;display:flex;align-items:center}.businesses-helped::before,.guarantee::before{content:'';display:inline-block;width:20px;height:20px;margin-right:10px;background-size:contain;background-repeat:no-repeat}.businesses-helped::before{background-image:url('resources/building.svg')}.guarantee::before{background-image:url('resources/high-quality.svg')}.hero-image{flex:1;position:relative}.hero-image img{max-width:100%;border-radius:10px;box-shadow:0 4px 6px rgba(0,0,0,0.1)}.testimonial{background-color:white;color:#333;padding:15px;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.1);position:absolute;bottom:-30px;right:-30px;max-width:300px;font-size:.9em}.testimonial-image{width:50px;height:50px;border-radius:50%;float:left;margin-right:10px}.highlighted-text{color:#FF7F50}@media (max-width:768px){.logo{height:20px}.hero{padding:100px 0 60px}.hero .container{flex-direction:column}.hero-content,.hero-image{width:100%}h1{font-size:2.5em}.testimonial{position:static;margin-top:20px;max-width:100%}}
         </style>
@@ -66,7 +69,7 @@
                 Your free trial is just a click away. Let's make magic happen.</p>
         </div>
         <div class="pain-points-image">
-            <img src="resources/hiring-illustration.webp" alt="Hiring process illustration">
+            <img src="resources/hiring-illustration.webp" alt="Hiring process illustration" loading="lazy">
         </div>
     </div>
 </section>
@@ -79,7 +82,7 @@
         <div class="video-showcase">
             <div class="video-display">
                 <div class="video-thumbnail">
-                    <img src="resources/thumbnail1.png" alt="Client 1 Testimonial">
+                    <img src="resources/thumbnail1.png" alt="Client 1 Testimonial" loading="lazy">
                     <div class="overlay">
                         <p id="success-snippet">"Saved $100,000 in our first year with Helipad!"</p>
                         <button class="play-btn">
@@ -95,15 +98,15 @@
                 <div class="video-carousel">
                     <div class="video-grid">
                         <div class="video-item" data-video="resources/video1.mp4" data-thumbnail="resources/thumbnail1.png" data-snippet="Saved $100,000 in our first year with Helipad!" data-author="Carolina, Nutritionist">
-                            <img src="resources/thumbnail1.webp" alt="Client 1">
+                            <img src="resources/thumbnail1.webp" alt="Client 1" loading="lazy">
                             <p id="video-author">Carolina, Nutritionist</p>
                         </div>
                         <div class="video-item" data-video="resources/video2.mp4" data-thumbnail="resources/thumbnail2.png" data-snippet="Increased productivity by 40% using Helipad VAs" data-author="Amy, Content Creator">
-                            <img src="resources/thumbnail2.webp" alt="Client 2">
+                            <img src="resources/thumbnail2.webp" alt="Client 2" loading="lazy">
                             <p id="video-author">Amy, Content Creator</p>
                         </div>
                         <div class="video-item" data-video="resources/video3.mp4" data-thumbnail="resources/thumbnail3.png" data-snippet="Scaled our business 3x faster with Helipad's support" data-author="Gary, Construction Business Owner">
-                            <img src="resources/thumbnail3.webp" alt="Client 3">
+                            <img src="resources/thumbnail3.webp" alt="Client 3" loading="lazy">
                             <p id="video-author">Gary, Construction Business Owner</p>
                         </div>
                     </div>
@@ -190,10 +193,10 @@
                 </div>
             </div>
             <div class="problem-image">
-                <img src="resources/high-costs.webp" alt="High Staffing Costs" class="active" data-problem="1">
-                <img src="resources/skill-gap.webp" alt="Difficulty Finding Skilled Workers" data-problem="2">
-                <img src="resources/remote-teams.webp" alt="Managing Remote Teams" data-problem="3">
-                <img src="resources/scalability.webp" alt="Scalability Issues" data-problem="4">
+                <img src="resources/high-costs.webp" alt="High Staffing Costs " class="active" data-problem="1" loading="lazy">
+                <img src="resources/skill-gap.webp" alt="Difficulty Finding Skilled Workers" data-problem="2" loading="lazy">
+                <img src="resources/remote-teams.webp" alt="Managing Remote Teams" data-problem="3" loading="lazy">
+                <img src="resources/scalability.webp" alt="Scalability Issues" data-problem="4" loading="lazy">
             </div>
         </div>
     </div>
@@ -345,7 +348,7 @@
                 </div>
             </div>
             <div class="cv-showcase">
-                <img src="resources/cv-showcase.webp" alt="Sample CVs" class="cv-stack-image">
+                <img src="resources/cv-showcase.webp" alt="Sample CVs" class="cv-stack-image" loading="lazy">
                 <p>These are just samples. Your CVs will be tailored to your needs.</p>
             </div>
         </div>
