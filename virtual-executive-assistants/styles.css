@@ -882,7 +882,8 @@ select:focus {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 200px; /* Adjust based on content */
+    max-height: 300px; /* Adjust based on content */
+    margin-bottom: 20px;
 }
 
 .faq-item.active .faq-icon {
@@ -890,7 +891,7 @@ select:focus {
 }
 
 li {
-    padding: 20px;
+    padding: 0 10px;
 }
 
 li::marker {
