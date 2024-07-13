@@ -888,6 +888,10 @@ select:focus {
     transform: rotate(45deg);
 }
 
+li {
+    padding: 20px;
+}
+
 .pain-points {
     background-color: #f8f9fa;
     padding: 80px 0;
