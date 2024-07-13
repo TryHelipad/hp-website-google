@@ -892,6 +892,10 @@ li {
     padding: 20px;
 }
 
+li::marker {
+    margin-left: 20px;
+}
+
 .pain-points {
     background-color: #f8f9fa;
     padding: 80px 0;
