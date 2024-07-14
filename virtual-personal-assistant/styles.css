@@ -796,6 +796,11 @@ select {
     font-size: 14px;
 }
 
+.li {
+    color: #666;
+    font-size: 1.1em;
+}
+
 /* Styling for iOS devices */
 @supports (-webkit-touch-callout: none) {
     select {
