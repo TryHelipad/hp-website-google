@@ -596,32 +596,32 @@
           <div id="step1" class="step">
             <h2>Get Your Top 1% Talent</h2>
             <form id="form1" method="POST" action="/api/submit-form" data-netlify="true" netlify-honeypot="bot-field">
-              <input type="text" id="name" placeholder="Full Name" required>
-              <input type="email" id="email" placeholder="Email Address" required>
-              <input type="tel" id="phone" placeholder="Phone Number" required>
-              <input type="text" id="company" placeholder="Company Name" required>
-              <button type="submit" class="next-btn">Next Step</button>
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+    <input type="email" id="email" name="email" placeholder="Email Address" required>
+    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+    <input type="text" id="company" name="company" placeholder="Company Name" required>
+    <button type="submit" class="next-btn">Next Step</button>
             </form>
           </div>
       
           <div id="step2" class="step hidden">
             <h2>Tell Us More</h2>
             <form id="form2" method="POST" action="/api/submit-form" data-netlify="true" netlify-honeypot="bot-field">
-              <select id="companySize" required>
-                <option value="" disabled selected>Select Company Size</option>
-                <option value="1-10">1-10 employees</option>
-                <option value="11-50">11-50 employees</option>
-                <option value="51-200">51-200 employees</option>
-                <option value="201+">201+ employees</option>
-              </select>
-              <select id="hireTimeline" required>
-                <option value="" disabled selected>When are you looking to hire?</option>
-                <option value="immediately">Immediately</option>
-                <option value="1-3 months">1-3 months</option>
-                <option value="3-6 months">3-6 months</option>
-                <option value="6+ months">6+ months</option>
-              </select>
-              <button type="submit" class="next-btn">Book Your Call</button>
+                <select id="companySize" name="companySize" required>
+                    <option value="" disabled selected>Select Company Size</option>
+                    <option value="1-10">1-10 employees</option>
+                    <option value="11-50">11-50 employees</option>
+                    <option value="51-200">51-200 employees</option>
+                    <option value="201+">201+ employees</option>
+                </select>
+                <select id="hireTimeline" name="hireTimeline" required>
+                    <option value="" disabled selected>When are you looking to hire?</option>
+                    <option value="immediately">Immediately</option>
+                    <option value="1-3 months">1-3 months</option>
+                    <option value="3-6 months">3-6 months</option>
+                    <option value="6+ months">6+ months</option>
+                </select>
+                <button type="submit" class="next-btn">Book Your Call</button>
             </form>
           </div>
       
