@@ -4,12 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextButton = document.querySelector('.carousel-next');
     const prevButton = document.querySelector('.carousel-prev');
     var modal = document.getElementById("modal");
-    var btns = document.querySelectorAll('.open-modal');
+    var btns = document.querySelectorAll('.open-modal');  // Changed to querySelectorAll
     var span = document.querySelector('.close');
     var step1 = document.getElementById("step1");
     var step2 = document.getElementById("step2");
     var step3 = document.getElementById("step3");
-    var multistepForm = document.getElementById("multistepForm");
+    var form1 = document.getElementById("form1");
+    var form2 = document.getElementById("form2");
 
     let cardWidth = cards[0].getBoundingClientRect().width;
     let cardMarginRight = parseInt(window.getComputedStyle(cards[0]).marginRight);
@@ -64,6 +65,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Optional: Auto-play functionality
+    function autoPlay() {
+        if (currentIndex < cards.length - 1) {
+            moveToCard(currentIndex + 1);
+        } else {
+            moveToCard(0);
+        }
+    }
+
+    // Uncomment the next line to enable auto-play
+    // setInterval(autoPlay, 5000); // Change slide every 5 seconds
+
     // Add click event listener to each button
     btns.forEach(function (btn) {
         btn.addEventListener('click', function () {
@@ -81,11 +94,43 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function nextStep(currentStep) {
-        if (currentStep === 1) {
+    async function submitForm(form) {
+        const formData = new FormData(form);
+        const json = JSON.stringify(Object.fromEntries(formData));
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(new FormData(form)).toString(),
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const result = await response.json();
+            console.log(result.message);
+        } catch (error) {
+            console.error('Error submitting form:', error);
+        }
+    }
+
+    // Form 1 submission
+    form1.onsubmit = function (e) {
+        e.preventDefault();
+        submitForm(e.target).then(() => {
             step1.classList.add('hidden');
             step2.classList.remove('hidden');
-        } else if (currentStep === 2) {
+        });
+    };
+
+    // Form 2 submission
+    form2.onsubmit = function (e) {
+        e.preventDefault();
+        submitForm(e.target).then(() => {
             step2.classList.add('hidden');
             step3.classList.remove('hidden');
 
@@ -104,31 +149,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     },
                 });
             }
-
-            adjustCalendlyWidth();
-        }
-    }
-
-    // Handle form submission
-    multistepForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        try {
-            const response = await fetch('/', {
-                method: 'POST',
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(new FormData(multistepForm)).toString()
-            });
-            if (response.ok) {
-                console.log('Form submitted successfully');
-                // Handle successful submission (e.g., show a thank you message)
-            } else {
-                throw new Error('Form submission failed');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            // Handle error (e.g., show an error message to the user)
-        }
-    });
+        });
+    };
 
     function adjustCalendlyWidth() {
         const calendlyWidget = document.querySelector('.calendly-inline-widget');
@@ -139,11 +161,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Call adjustCalendlyWidth when opening the modal, switching to step 3, and on window resize
+    // Call this function when opening the modal, switching to step 3, and on window resize
     window.addEventListener('resize', adjustCalendlyWidth);
 
     // Call adjustCalendlyWidth when switching to step 3
-    document.querySelector('.next-btn[onclick="nextStep(2)"]').addEventListener('click', function () {
+    form2.addEventListener('submit', function () {
         setTimeout(adjustCalendlyWidth, 0);
     });
 });
