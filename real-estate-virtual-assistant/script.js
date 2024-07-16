@@ -99,13 +99,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const json = JSON.stringify(Object.fromEntries(formData));
 
         try {
-            const response = await fetch('/api/submit-form', {
+            const response = await fetch(form.action, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: json
+                body: new URLSearchParams(new FormData(form)).toString(),
             });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
 
             const result = await response.json();
             console.log(result.message);
@@ -140,9 +144,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         email: document.getElementById('email').value,
                         customAnswers: {
                             a1: document.getElementById('companySize').value,
-                            a2: document.getElementById('hireTimeline').value
-                        }
-                    }
+                            a2: document.getElementById('hireTimeline').value,
+                        },
+                    },
                 });
             }
         });
