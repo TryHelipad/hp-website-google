@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextButton = document.querySelector('.carousel-next');
     const prevButton = document.querySelector('.carousel-prev');
     var modal = document.getElementById("modal");
-    var btn = document.getElementById("openModal");
+    var btn = document.getElementsById("openModal");
     var span = document.getElementsByClassName("close")[0];
     var step1 = document.getElementById("step1");
     var step2 = document.getElementById("step2");
