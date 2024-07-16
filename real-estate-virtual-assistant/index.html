@@ -593,18 +593,20 @@
         <div class="modal-content">
           <span class="close">&times;</span>
           
-          <form id="combinedForm" method="POST" action="/api/submit-form" data-netlify="true" netlify-honeypot="bot-field">
-            <div id="step1" class="step">
-                <h2>Get Your Top 1% Talent</h2>
+          <div id="step1" class="step">
+            <h2>Get Your Top 1% Talent</h2>
+            <form id="form1" method="POST" action="/api/submit-form" data-netlify="true" netlify-honeypot="bot-field">
                 <input type="text" id="name" name="name" placeholder="Full Name" required>
-                <input type="email" id="email" name="email" placeholder="Email Address" required>
-                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-                <input type="text" id="company" name="company" placeholder="Company Name" required>
-                <button type="button" class="next-btn" onclick="showStep2()">Next Step</button>
-            </div>
-        
-            <div id="step2" class="step hidden">
-                <h2>Tell Us More</h2>
+    <input type="email" id="email" name="email" placeholder="Email Address" required>
+    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+    <input type="text" id="company" name="company" placeholder="Company Name" required>
+    <button type="submit" class="next-btn">Next Step</button>
+            </form>
+          </div>
+      
+          <div id="step2" class="step hidden">
+            <h2>Tell Us More</h2>
+            <form id="form2" method="POST" action="/api/submit-form" data-netlify="true" netlify-honeypot="bot-field">
                 <select id="companySize" name="companySize" required>
                     <option value="" disabled selected>Select Company Size</option>
                     <option value="1-10">1-10 employees</option>
@@ -620,13 +622,13 @@
                     <option value="6+ months">6+ months</option>
                 </select>
                 <button type="submit" class="next-btn">Book Your Call</button>
-            </div>
-        
-            <div id="step3" class="step hidden">
-                <h2>Schedule Your Call</h2>
-                <div class="calendly-inline-widget" data-url="https://calendly.com/hello-tryhelipad/30min?hide_event_type_details=1&hide_gdpr_banner=1"></div>
-            </div>
-        </form>
+            </form>
+          </div>
+      
+          <div id="step3" class="step hidden">
+            <h2>Schedule Your Call</h2>
+            <div class="calendly-inline-widget" data-url="https://calendly.com/hello-tryhelipad/30min?hide_event_type_details=1&hide_gdpr_banner=1"></div>
+          </div>
         </div>
       </div>
     <script type="text/javascript"src="script.js"></script>
