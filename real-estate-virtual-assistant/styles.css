@@ -1111,6 +1111,10 @@ h1 {
   font-size: 2rem;
 }
 
+.hero .container {
+  gap: 0px;
+}
+
   }
 
   /*end responsive*/
