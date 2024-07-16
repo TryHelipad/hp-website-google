@@ -1102,6 +1102,10 @@ input::placeholder {
   width: 100%;
   max-width: 160px;
 }
+.social-proof {
+  flex-direction: column;
+  align-items: center;
+}
 
   }
 
@@ -1123,10 +1127,7 @@ input::placeholder {
     font-size: 2rem;
   }
 
-  .social-proof {
-    flex-direction: column;
-    align-items: center;
-  }
+
 
   .expertise-item,
   .feature-item {
