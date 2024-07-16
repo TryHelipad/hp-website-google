@@ -4,13 +4,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextButton = document.querySelector('.carousel-next');
     const prevButton = document.querySelector('.carousel-prev');
     var modal = document.getElementById("modal");
-    var btns = document.querySelectorAll('.open-modal');  // Changed to querySelectorAll
+    var btns = document.querySelectorAll('.open-modal');
     var span = document.querySelector('.close');
     var step1 = document.getElementById("step1");
     var step2 = document.getElementById("step2");
     var step3 = document.getElementById("step3");
-    var form1 = document.getElementById("form1");
-    var form2 = document.getElementById("form2");
+    var combinedForm = document.getElementById("combinedForm");
 
     let cardWidth = cards[0].getBoundingClientRect().width;
     let cardMarginRight = parseInt(window.getComputedStyle(cards[0]).marginRight);
@@ -94,6 +93,35 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function showStep2() {
+        step1.classList.add('hidden');
+        step2.classList.remove('hidden');
+    }
+
+    combinedForm.onsubmit = function (e) {
+        e.preventDefault();
+        submitForm(e.target).then(() => {
+            step2.classList.add('hidden');
+            step3.classList.remove('hidden');
+
+            // Load Calendly widget
+            if (typeof Calendly !== 'undefined') {
+                Calendly.initInlineWidget({
+                    url: 'https://calendly.com/hello-tryhelipad/30min?hide_event_type_details=1&hide_gdpr_banner=1',
+                    parentElement: document.querySelector('.calendly-inline-widget'),
+                    prefill: {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        customAnswers: {
+                            a1: document.getElementById('companySize').value,
+                            a2: document.getElementById('hireTimeline').value
+                        }
+                    }
+                });
+            }
+        });
+    };
+
     async function submitForm(form) {
         const formData = new FormData(form);
         const json = JSON.stringify(Object.fromEntries(formData));
@@ -118,40 +146,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Form 1 submission
-    form1.onsubmit = function (e) {
-        e.preventDefault();
-        submitForm(e.target).then(() => {
-            step1.classList.add('hidden');
-            step2.classList.remove('hidden');
-        });
-    };
-
-    // Form 2 submission
-    form2.onsubmit = function (e) {
-        e.preventDefault();
-        submitForm(e.target).then(() => {
-            step2.classList.add('hidden');
-            step3.classList.remove('hidden');
-
-            // Load Calendly widget
-            if (typeof Calendly !== 'undefined') {
-                Calendly.initInlineWidget({
-                    url: 'https://calendly.com/hello-tryhelipad/30min?hide_event_type_details=1&hide_gdpr_banner=1',
-                    parentElement: document.querySelector('.calendly-inline-widget'),
-                    prefill: {
-                        name: document.getElementById('name').value,
-                        email: document.getElementById('email').value,
-                        customAnswers: {
-                            a1: document.getElementById('companySize').value,
-                            a2: document.getElementById('hireTimeline').value,
-                        },
-                    },
-                });
-            }
-        });
-    };
-
     function adjustCalendlyWidth() {
         const calendlyWidget = document.querySelector('.calendly-inline-widget');
         if (calendlyWidget) {
@@ -165,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', adjustCalendlyWidth);
 
     // Call adjustCalendlyWidth when switching to step 3
-    form2.addEventListener('submit', function () {
+    combinedForm.addEventListener('submit', function () {
         setTimeout(adjustCalendlyWidth, 0);
     });
 });
