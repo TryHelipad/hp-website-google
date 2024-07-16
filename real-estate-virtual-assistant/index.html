@@ -595,7 +595,7 @@
           
           <div id="step1" class="step">
             <h2>Get Your Top 1% Talent</h2>
-            <form id="form1" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <form id="form1" method="POST" action="/api/submit-form" data-netlify="true" netlify-honeypot="bot-field">
               <input type="text" id="name" placeholder="Full Name" required>
               <input type="email" id="email" placeholder="Email Address" required>
               <input type="tel" id="phone" placeholder="Phone Number" required>
@@ -606,7 +606,7 @@
       
           <div id="step2" class="step hidden">
             <h2>Tell Us More</h2>
-            <form id="form2" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <form id="form2" method="POST" action="/api/submit-form" data-netlify="true" netlify-honeypot="bot-field">
               <select id="companySize" required>
                 <option value="" disabled selected>Select Company Size</option>
                 <option value="1-10">1-10 employees</option>
