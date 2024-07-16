@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextButton = document.querySelector('.carousel-next');
     const prevButton = document.querySelector('.carousel-prev');
     var modal = document.getElementById("modal");
-    var btns = document.querySelectorAll('.open-modal');
+    var btns = document.querySelectorAll('.open-modal');  // Changed to querySelectorAll
     var span = document.querySelector('.close');
     var step1 = document.getElementById("step1");
     var step2 = document.getElementById("step2");
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    async function submitForm(form, nextStep) {
+    async function submitForm(form) {
         const formData = new FormData(form);
         const json = JSON.stringify(Object.fromEntries(formData));
 
@@ -109,10 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const result = await response.json();
             console.log(result.message);
-
-            // Handle success - for example, show the next step in the modal
-            form.parentElement.classList.add('hidden');
-            nextStep.classList.remove('hidden');
         } catch (error) {
             console.error('Error submitting form:', error);
         }
@@ -121,13 +117,35 @@ document.addEventListener('DOMContentLoaded', function () {
     // Form 1 submission
     form1.onsubmit = function (e) {
         e.preventDefault();
-        submitForm(e.target, step2);
+        submitForm(e.target).then(() => {
+            step1.classList.add('hidden');
+            step2.classList.remove('hidden');
+        });
     };
 
     // Form 2 submission
     form2.onsubmit = function (e) {
         e.preventDefault();
-        submitForm(e.target, step3);
+        submitForm(e.target).then(() => {
+            step2.classList.add('hidden');
+            step3.classList.remove('hidden');
+
+            // Load Calendly widget
+            if (typeof Calendly !== 'undefined') {
+                Calendly.initInlineWidget({
+                    url: 'https://calendly.com/hello-tryhelipad/30min?hide_event_type_details=1&hide_gdpr_banner=1',
+                    parentElement: document.querySelector('.calendly-inline-widget'),
+                    prefill: {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        customAnswers: {
+                            a1: document.getElementById('companySize').value,
+                            a2: document.getElementById('hireTimeline').value
+                        }
+                    }
+                });
+            }
+        });
     };
 
     function adjustCalendlyWidth() {
