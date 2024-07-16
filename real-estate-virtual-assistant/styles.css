@@ -929,6 +929,13 @@ input, select {
 }
 
 /* Responsive Design */
+@media (max-width: 1500px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+
 @media (max-width: 1200px) {
   .container {
     padding: 0 40px;
