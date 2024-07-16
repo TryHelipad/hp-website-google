@@ -1107,6 +1107,10 @@ input::placeholder {
   align-items: center;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
   }
 
   /*end responsive*/
@@ -1123,9 +1127,7 @@ input::placeholder {
     padding-top: 100px;
   }
 
-  h1 {
-    font-size: 2rem;
-  }
+
 
 
 
