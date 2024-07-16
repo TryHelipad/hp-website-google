@@ -1153,7 +1153,7 @@ input, select {
   .hero .container {
     gap: 0px;
   }
-}
+
 
 /*end responsive*/
 
@@ -1214,4 +1214,6 @@ section {
 
 .feature-item {
   padding: 20px;
+}
+
 }
