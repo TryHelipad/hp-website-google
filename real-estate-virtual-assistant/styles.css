@@ -889,12 +889,12 @@ input::placeholder {
 
 /* Calendly specific styles */
 .calendly-inline-widget {
-  min-width: 320px;
-  height: 700px;
+  min-width: unset !important; /* Override Calendly's default min-width */
+  width: 100% !important; /* Make it 100% width of its container */
+  height: 600px; /* Adjust height as needed */
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
   overflow: hidden;
-  width: 410px;
 }
 
 /* Responsive Design */
