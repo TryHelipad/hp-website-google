@@ -38,7 +38,6 @@ img {
 /* Header Styles */
 header {
   background-color: #003366;
-  padding: 20px 0;
   color: white;
 }
 
@@ -227,6 +226,7 @@ header {
 .features {
   display: flex;
   gap: 20px;
+  margin-top: 20px;
 }
 
 .feature {
@@ -1113,6 +1113,21 @@ html {
   .step-item {
     width: 80px;
   }
+
+  .cta-button, .get-started-btn {
+    background-color: #FF7F50;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.9em;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
 }
 
 /* Ensure Slick slider doesn't cause overflow */
