@@ -951,11 +951,12 @@ html {
   }
 
   .partner-logos {
-    gap: 15px;
+    gap: 10px;
+    margin-top: 10px;
   }
 
   .partner-logos img {
-    height: 60px;
+    height: 90px;
   }
 
   .employee-section {
