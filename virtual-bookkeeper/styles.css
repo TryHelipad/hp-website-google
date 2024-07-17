@@ -1,26 +1,41 @@
+/* General Styles */
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
 }
 
-.container {
+.container,
+.header-content,
+.hero-content,
+.candidate-cards,
+.partner-logos,
+.employee-section,
+.talent-section,
+.hiring-platform,
+.get-started-section,
+.video-carousel-container,
+.form-cv-wrapper,
+.faq-list {
   width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Header styles */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header Styles */
 header {
   background-color: #003366;
   padding: 20px 0;
@@ -31,25 +46,44 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 .logo img {
   height: 30px;
 }
 
-/* Hero section styles */
+/* CTA Button Styles */
+.cta-button, .get-started-btn {
+  background-color: #FF7F50;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.cta-button:hover, .get-started-btn:hover {
+  background-color: #ff6a3c;
+  transform: scale(1.05);
+}
+
+.cta-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Hero Section Styles */
 .hero {
   background: linear-gradient(to bottom right, #E6F1F7, #ffffff);
   padding: 50px;
   text-align: center;
-}
-
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .hero h1 {
@@ -63,38 +97,14 @@ header {
   color: #6c7a89;
 }
 
-/* CTA Button styles */
-.cta-button {
-  background-color: #FF7F50;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 1.1em;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #ff6a3c;
-  transform: scale(1.05);
-}
-
-.cta-button-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-/* Candidate cards styles */
+/* Candidate Cards Styles */
 .candidate-cards {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-top: 40px;
   align-items: flex-end;
+  flex-wrap: wrap;
 }
 
 .card1, .card2, .card3, .card4 {
@@ -105,17 +115,9 @@ header {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.card1, .card4 {
-  height: 350px;
-}
-
-.card2, .card3 {
-  height: 250px;
-}
-
-.card2, .card4 {
-  border: solid 1px #003366;
-}
+.card1, .card4 { height: 350px; }
+.card2, .card3 { height: 250px; }
+.card2, .card4 { border: solid 1px #003366; }
 
 .card1 { background: url('resources/gabriel.png') center/cover no-repeat; }
 .card2 { background: url('resources/isabella.png') center/cover no-repeat; }
@@ -147,15 +149,14 @@ header {
   color: white;
 }
 
-.cardp { color: white; }
-
-/* Partner logos styles */
+/* Partner Logos Styles */
 .partner-logos {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   gap: 30px;
   margin-top: 80px;
+  flex-wrap: wrap;
 }
 
 .partner-logos img {
@@ -163,18 +164,18 @@ header {
   opacity: 0.7;
 }
 
-/* Highlight colors */
+/* Highlight Colors */
 .highlight { color: #003366; }
 .highlightorange { color: #FF7F50; }
 .highlightmaroon { color: #470303; }
 
-/* Employee section styles */
 .employee-section {
   display: flex;
   justify-content: space-between;
   padding: 50px;
   background-color: #f5f7fa;
   align-items: center;
+  margin: 100px auto;
 }
 
 .content-left {
@@ -223,25 +224,6 @@ header {
   line-height: 1.4;
 }
 
-.get-started-btn {
-  background-color: #FF7F50;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 1.1em;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-bottom: 20px;
-}
-
-.get-started-btn:hover {
-  background-color: #ff6a3c;
-  transform: scale(1.05);
-}
-
 .features {
   display: flex;
   gap: 20px;
@@ -260,16 +242,19 @@ header {
 
 .content-right {
   flex: 1;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-/* Job card styles */
+/* Job Card Styles */
 .job-card {
   background-color: white;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   min-height: 350px;
-  margin-right: 50px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .job-header {
@@ -295,7 +280,7 @@ header {
   color: #4cd964;
 }
 
-/* Proposal card styles */
+/* Proposal Card Styles */
 .proposal-card {
   background-color: #f8f9fa;
   border-radius: 8px;
@@ -354,12 +339,12 @@ header {
   width: 60%;
 }
 
-/* Talent section styles */
+/* Talent Section Styles */
 .talent-section {
   background-color: #f8f9fa;
   padding: 60px 20px;
   text-align: center;
-  margin: 100px;
+  margin: 100px auto;
   border-radius: 50px;
 }
 
@@ -380,6 +365,7 @@ header {
   gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .feature-card {
@@ -391,6 +377,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  min-width: 250px;
 }
 
 .feature-card.highlight {
@@ -418,13 +405,13 @@ header {
   color: #a0aec0;
 }
 
-/* Hiring platform section styles */
+/* Hiring Platform Section Styles */
 .hiring-platform {
   display: flex;
   align-items: center;
   padding: 50px 20px;
   background-color: #fff;
-  margin: 100px;
+  margin: 100px auto;
   gap: 48px;
 }
 
@@ -463,9 +450,9 @@ header {
   flex: 1;
 }
 
-/* Get started section styles */
+/* Get Started Section Styles */
 .get-started-section {
-  background-image: url('resources/get-started.png');
+  background-image: url(resources/get-started.png);
   background-size: cover;
   background-position: center;
   background-color: #1a4a5e;
@@ -474,7 +461,7 @@ header {
   text-align: center;
   position: relative;
   overflow: hidden;
-  margin: 100px;
+  margin: 100px auto;
 }
 
 .get-started-section .content {
@@ -496,7 +483,7 @@ header {
   line-height: 25px;
 }
 
-/* Video Testimonials Section */
+/* Video Testimonials Section Styles */
 .video-testimonials {
   background-color: #f8f9fa;
   padding: 60px 0;
@@ -515,38 +502,28 @@ header {
   margin-bottom: 30px;
 }
 
-.star-rating i {
-  margin: 0 2px;
-}
-
-.carousel {
+.video-carousel-container {
   position: relative;
   max-width: 800px;
-  width: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  padding: 0 15px;
 }
 
-.carousel-inner {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+.video-carousel {
+  width: 100%;
 }
 
 .carousel-item {
-  flex: 0 0 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.carousel-item.active {
-  display: block;
+  padding: 0 10px;
 }
 
 .video-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 100%; /* 1:1 Aspect Ratio */
-  height: 0;
+  max-width: 400px;
+  margin: 0 auto 20px;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -557,21 +534,6 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 24px;
-  cursor: pointer;
 }
 
 .testimonial-text {
@@ -585,60 +547,40 @@ header {
   color: #1a3b5d;
 }
 
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #FF7F50;
-  color: white;
-  border: none;
-  font-size: 1.5em;
-  padding: 10px 15px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  z-index: 2;
-}
-
-.carousel-control:hover {
-  background-color: #ff6a3c;
-}
-
-.carousel-control.prev {
-  left: 10px;
-}
-
-.carousel-control.next {
-  right: 10px;
-}
-
-.carousel-indicators {
+.carousel-controls {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
-.indicator {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: #ccc;
+.control-btn {
+  background-color: #1a3b5d;
+  color: white;
+  border: none;
   border-radius: 50%;
-  margin: 0 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  margin: 0 10px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.indicator.active {
+.control-btn:hover {
   background-color: #FF7F50;
 }
 
+.control-btn:focus {
+  outline: none;
+}
 
-
-/* Form and CV Showcase Section styles */
+/* Form and CV Showcase Section Styles */
 .form-cv-section {
   padding: 80px 0;
   background-color: #f5f5f5;
 }
 
+/* Form and CV Showcase Section Styles (continued) */
 .form-cv-section h2 {
   text-align: center;
   font-family: 'Poppins', sans-serif;
@@ -649,10 +591,9 @@ header {
 
 .section-description {
   text-align: center;
-  margin: 0 auto 0px;
+  margin: 0 auto 50px;
   color: #666;
   font-size: 1.1em;
-  margin-bottom: 50px;
 }
 
 .form-cv-wrapper {
@@ -668,6 +609,9 @@ header {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   margin-top: 50px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .cv-showcase {
@@ -793,11 +737,13 @@ header {
 #cv-request-form input,
 #cv-request-form textarea {
   width: 100%;
+  max-width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
 }
 
 #cv-request-form h3 {
@@ -819,10 +765,6 @@ select {
   width: 100%;
   height: 40px;
   line-height: 1.3;
-}
-
-/* Add a custom dropdown arrow */
-select {
   background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
   background-repeat: no-repeat;
   background-position: right 10px center;
@@ -830,22 +772,7 @@ select {
   padding-right: 30px;
 }
 
-.footer {
-  background-color: #002f60;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.footer-content p {
-  margin: 0;
-  font-size: 14px;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+/* FAQ Section Styles */
 .faqs {
   background-color: #f8f9fa;
   padding: 60px 0;
@@ -853,8 +780,9 @@ html {
 
 .faqs h2 {
   color: #1a3b5d;
-    font-size: 2.5em;
-    margin-bottom: 40px;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 .faq-list {
@@ -906,24 +834,34 @@ html {
   max-height: 1000px;
 }
 
-@media (max-width: 768px) {
-  .form-section .container {
-    flex-direction: column;
-  }
-
-  .form-container {
-    padding-right: 0;
-    margin-bottom: 50px;
-  }
-
-  .form-image {
-    order: -1;
-    margin-bottom: 30px;
-  }
+/* Footer Styles */
+.footer {
+  background-color: #002f60;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
 }
 
-/* Responsive styles */
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive Styles */
 @media (max-width: 1024px) {
+  .talent-section, .hiring-platform, .get-started-section {
+    margin: 50px auto;
+}
+
+  .partner-logos img {
+    height: 80px;
+  }
+  
   .hero {
     padding: 30px;
   }
@@ -934,20 +872,6 @@ html {
 
   .hero p {
     font-size: 1.1em;
-  }
-
-  .candidate-cards {
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-
-  .card1, .card2, .card3, .card4 {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .partner-logos {
-    flex-wrap: wrap;
   }
 
   .employee-section {
@@ -1010,17 +934,58 @@ html {
   .video-testimonials h2 {
     font-size: 2em;
   }
-
-  .carousel-control.prev {
-    left: 10px;
-  }
-
-  .carousel-control.next {
-    right: 10px;
-  }
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding: 30px 20px;
+  }
+
+  .candidate-cards {
+    gap: 10px;
+  }
+
+  .card1, .card2, .card3, .card4 {
+    width: calc(50% - 10px);
+    height: 200px;
+  }
+
+  .partner-logos {
+    gap: 15px;
+  }
+
+  .partner-logos img {
+    height: 60px;
+  }
+
+  .employee-section {
+    padding: 30px 20px;
+  }
+
+  .content-left {
+    padding-left: 0;
+  }
+
+  .job-card {
+    margin-right: 0;
+  }
+
+  .features-container {
+    gap: 10px;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+
+  .hiring-platform {
+    gap: 30px;
+  }
+
+  .form-cv-wrapper {
+    gap: 20px;
+  }
+
   .header-content {
     flex-direction: row;
     text-align: center;
@@ -1052,13 +1017,7 @@ html {
   }
 
   .employee-section {
-    flex-direction: column;
     padding: 20px;
-  }
-
-  .content-left, .content-right {
-    padding: 20px;
-    width: 100%;
   }
 
   .content-left h2 {
@@ -1069,55 +1028,116 @@ html {
     font-size: 1em;
   }
 
-  .content-right {
-    margin-top: 20px;
-  }
-
-  .talent-section {
-    margin: 20px;
-    border-radius: 10px;
-  }
-
-  .hiring-platform {
-    flex-direction: column;
-    margin: 20px;
-  }
-
-  .platform-image {
-    max-width: 100%;
-  }
-
-  .get-started-section {
-    padding: 30px 20px;
-    margin: 20px;
-  }
-
   .get-started-section h2 {
     font-size: 1.8em;
-  }
-
-  .video-testimonials {
-    padding: 30px 20px;
   }
 
   .video-testimonials h2 {
     font-size: 1.8em;
   }
 
-  .carousel-inner {
-    display: block;
-  }
-
-  .carousel-item {
-    display: block;
-  }
-
   .carousel-control.prev,
-  .carousel-control.next {
-    display: none;
-  }
-
+  .carousel-control.next,
   .carousel-indicators {
     display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .video-wrapper {
+    max-width: 100%;
+  }
+
+  .testimonial-text {
+    font-size: 1em;
+  }
+
+  .control-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    margin: 0 5px;
+  }
+
+  .hero h1 {
+    font-size: 1.8em;
+  }
+
+  .hero p {
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+
+  .card1, .card2, .card3, .card4 {
+    width: 100%;
+    height: 310px;
+}
+
+  .content-left h2,
+  .talent-section h2,
+  .hiring-platform .content h2,
+  .get-started-section h2,
+  .video-testimonials h2,
+  .form-cv-section h2,
+  .faqs h2 {
+    font-size: 1.8em;
+  }
+
+  .steps-list li {
+    margin-bottom: 20px;
+  }
+
+  .step-number {
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+  }
+
+  .feature-card {
+    max-width: 100%;
+  }
+
+  .video-wrapper {
+    max-width: 100%;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .progress-indicator::before {
+    left: 30px;
+    right: 30px;
+  }
+
+  .step-item {
+    width: 80px;
+  }
+}
+
+/* Ensure Slick slider doesn't cause overflow */
+.slick-slider,
+.slick-list,
+.slick-track {
+  width: 100%;
+}
+
+.slick-slide {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure aspect-ratio fallback for older browsers */
+@supports not (aspect-ratio: 1 / 1) {
+  .video-wrapper::before {
+    float: left;
+    padding-top: 100%;
+    content: '';
+  }
+
+  .video-wrapper::after {
+    display: block;
+    content: '';
+    clear: both;
   }
 }

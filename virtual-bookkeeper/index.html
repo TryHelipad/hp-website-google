@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 </head>
 <body>
     <header>
@@ -176,62 +178,47 @@
           <div class="container">
             <h2>Success Stories from Our Clients</h2>
             <div class="star-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+              <!-- Add star rating here -->
             </div>
             <p>Discover how 1,875 businesses have increased their productivity by 75% and reduced costs by an average of 50% by hiring virtual staff from Helipad.</p>
-            <div class="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
+            
+            <div class="video-carousel-container">
+              <div class="video-carousel">
+                <div class="carousel-item">
                   <div class="video-wrapper">
-                    <video>
-                      <source src="resources/video3.mp4" type="video/mp4">
+                    <video controls>
+                      <source src="resources/video1.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
-                    <button class="play-button">
-                      <i class="fas fa-play"></i>
-                    </button>
                   </div>
                   <p class="testimonial-text">"Scaled our business 3x faster with Helipad's support"</p>
                   <p class="client-name">- Gary, Construction Business Owner</p>
                 </div>
                 <div class="carousel-item">
                   <div class="video-wrapper">
-                    <video>
+                    <video controls>
                       <source src="resources/video2.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
-                    <button class="play-button">
-                      <i class="fas fa-play"></i>
-                    </button>
                   </div>
                   <p class="testimonial-text">"Increased productivity by 40% using Helipad VAs"</p>
                   <p class="client-name">- Alexis, Start-up Founder</p>
                 </div>
                 <div class="carousel-item">
                   <div class="video-wrapper">
-                    <video>
-                      <source src="resources/video1.mp4" type="video/mp4">
+                    <video controls>
+                      <source src="resources/video3.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
-                    <button class="play-button">
-                      <i class="fas fa-play"></i>
-                    </button>
                   </div>
                   <p class="testimonial-text">"Saved $100,000 in our first year with Helipad!"</p>
                   <p class="client-name">- Carolina, CEO</p>
                 </div>
               </div>
-              <button class="carousel-control prev">&lt;</button>
-              <button class="carousel-control next">&gt;</button>
-            </div>
-            <div class="carousel-indicators">
-              <span class="indicator active" data-slide-to="0"></span>
-              <span class="indicator" data-slide-to="1"></span>
-              <span class="indicator" data-slide-to="2"></span>
+              <div class="carousel-controls">
+                <button class="control-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="control-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+              </div>
             </div>
           </div>
         </section>
@@ -373,6 +360,8 @@
       </div>
   </footer>
     <!-- External JavaScript -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="scripts.js"></script>
 </body>
 </html>
