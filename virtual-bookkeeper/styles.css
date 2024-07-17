@@ -118,10 +118,10 @@ header {
 .card2, .card3 { height: 250px; }
 .card2, .card4 { border: solid 1px #003366; }
 
-.card1 { background: url('resources/gabriel.png') center/cover no-repeat; }
-.card2 { background: url('resources/isabella.png') center/cover no-repeat; }
-.card3 { background: url('resources/juan.png') center/cover no-repeat; }
-.card4 { background: url('resources/maria.png') center/cover no-repeat; }
+.card1 { background: url('resources/gabriel.webp') center/cover no-repeat; }
+.card2 { background: url('resources/isabella.webp') center/cover no-repeat; }
+.card3 { background: url('resources/juan.webp') center/cover no-repeat; }
+.card4 { background: url('resources/maria.webp') center/cover no-repeat; }
 
 .card-content1, .card-content2, .card-content3, .card-content4 {
   position: absolute;
@@ -452,7 +452,7 @@ header {
 
 /* Get Started Section Styles */
 .get-started-section {
-  background-image: url(resources/get-started.png);
+  background-image: url(resources/get-started.webp);
   background-size: cover;
   background-position: center;
   background-color: #1a4a5e;
